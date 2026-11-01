@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Sheet } from "../Sheet";
+import { CatalogDataLicenses } from "./CatalogDataLicenses";
 import { type LicenseEntry, LICENSES_URL, parseLicenses, sourceUrl } from "./thirdPartyLicenses";
 
 type Props = {
@@ -42,6 +43,8 @@ export function LicenseSheet({ onClose }: Props) {
           このアプリは次のオープンソースソフトウェアを利用しています。地図データは Natural
           Earth（パブリックドメイン）をもとにしています。
         </p>
+        <CatalogDataLicenses />
+        <h3>ソフトウェア</h3>
         {state.status === "loading" && <p className="license-status">読み込んでいます…</p>}
         {state.status === "error" && (
           <p className="license-status">

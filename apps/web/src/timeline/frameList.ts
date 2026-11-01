@@ -22,7 +22,7 @@ export function frameListItems(reel: Reel): readonly FrameListItem[] {
     count: `+${entry.newCountries.length}`,
     time: jumps[index] ?? 0,
   }));
-  const total = `${timeline.summary.countries.length} か国`;
+  const total = `${timeline.summary.countries.length} か国・地域`;
   let first = 1;
   const pages = summaryPages.map((names, page) => {
     const last = first + names.length - 1;

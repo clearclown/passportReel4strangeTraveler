@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-11-01",
+  "purpose": "有限の法令・政府一覧と収録候補を照合した範囲。国全体・世界全体の網羅性や採用を認定するものではない。",
+  "entries": [
+    {
+      "id": "spain-autonomous-communities",
+      "title": "スペインの自治州",
+      "contextCode": "ES",
+      "scope": "政府のComunidades y Ciudades Autónomas一覧のうち自治州17件。",
+      "expectedCount": 17,
+      "regionIds": [
+        "region:andalusia",
+        "region:aragon",
+        "region:asturias",
+        "region:cantabria",
+        "region:castile-and-leon",
+        "region:castile-la-mancha",
+        "region:canary-islands",
+        "region:catalonia",
+        "region:extremadura",
+        "region:galicia",
+        "region:balearic-islands",
+        "region:murcia",
+        "region:madrid",
+        "region:navarre",
+        "region:basque-country",
+        "region:la-rioja",
+        "region:valencian-community"
+      ],
+      "listingStatus": "reconciled",
+      "rightsReviewStatus": "incomplete",
+      "sourceRefs": ["spain-territorial-list"],
+      "sourceLocator": "Organización territorial / Comunidades y Ciudades Autónomas",
+      "reviewedOn": "2026-11-01",
+      "basisDate": null,
+      "limitations": [
+        "自治都市・下位区画はこの集合に含めない。",
+        "17件の収録照合は、各自治州の権限が等しいことや高度自治の認定を意味しない。"
+      ]
+    },
+    {
+      "id": "spain-autonomous-cities",
+      "title": "スペインの自治都市",
+      "contextCode": "ES",
+      "scope": "同じ政府一覧にあるセウタとメリリャ。",
+      "expectedCount": 2,
+      "regionIds": ["region:ceuta", "region:melilla"],
+      "listingStatus": "reconciled",
+      "rightsReviewStatus": "incomplete",
+      "sourceRefs": ["spain-territorial-list"],
+      "sourceLocator": "Organización territorial / Comunidades y Ciudades Autónomas",
+      "reviewedOn": "2026-11-01",
+      "basisDate": null,
+      "limitations": ["自治州と異なる制度として権限を確認する。"]
+    },
+    {
+      "id": "italy-special-statute-regions",
+      "title": "イタリアの特別自治州",
+      "contextCode": "IT",
+      "scope": "取得した憲法英訳116条第1段落が列挙する5州。",
+      "expectedCount": 5,
+      "regionIds": [
+        "region:aosta-valley",
+        "region:trentino-alto-adige",
+        "region:friuli-venezia-giulia",
+        "region:sicily",
+        "region:sardinia"
+      ],
+      "listingStatus": "reconciled",
+      "rightsReviewStatus": "incomplete",
+      "sourceRefs": ["italy-constitution-116"],
+      "sourceLocator": "Art. 116, paragraph 1",
+      "reviewedOn": "2026-11-01",
+      "basisDate": null,
+      "limitations": [
+        "英訳の版日付と現行伊語全文の照合は未完了。",
+        "同条の追加的自治を認める規定に基づく他州の制度は、この5州の集合に含めない。"
+      ]
+    },
+    {
+      "id": "italy-autonomous-provinces-116",
+      "title": "憲法116条の2自治県",
+      "contextCode": "IT",
+      "scope": "取得した憲法英訳116条第2段落のトレントとボルツァーノ。",
+      "expectedCount": 2,
+      "regionIds": ["region:trentino", "region:south-tyrol"],
+      "listingStatus": "reconciled",
+      "rightsReviewStatus": "incomplete",
+      "sourceRefs": ["italy-constitution-116"],
+      "sourceLocator": "Art. 116, paragraph 2",
+      "reviewedOn": "2026-11-01",
+      "basisDate": null,
+      "limitations": ["上位の特別自治州との領域の重複がある。訪問先ID単位で別々に数える。"]
+    },
+    {
+      "id": "portugal-autonomous-regions",
+      "title": "ポルトガルの自治地域",
+      "contextCode": "PT",
+      "scope": "憲法225条が対象とするアゾレスとマデイラ。",
+      "expectedCount": 2,
+      "regionIds": ["region:azores", "region:madeira"],
+      "listingStatus": "reconciled",
+      "rightsReviewStatus": "incomplete",
+      "sourceRefs": ["portugal-constitution-autonomy"],
+      "sourceLocator": "Artigo 225.º",
+      "reviewedOn": "2026-11-01",
+      "basisDate": null,
+      "limitations": ["下位区画の探索と、各地域の自治憲章・実際の権限の確認は未完了。"]
+    },
+    {
+      "id": "china-provincial-autonomous-regions",
+      "title": "中国の省級自治区",
+      "contextCode": "CN",
+      "scope": "2025年8月18日の記事が列挙する省級5自治区。",
+      "expectedCount": 5,
+      "regionIds": [
+        "region:inner-mongolia",
+        "region:guangxi",
+        "region:tibet-autonomous-region",
+        "region:ningxia",
+        "region:xinjiang"
+      ],
+      "listingStatus": "reconciled",
+      "rightsReviewStatus": "incomplete",
+      "sourceRefs": ["china-autonomous-region-list"],
+      "sourceLocator": "The five autonomous regions are …",
+      "reviewedOn": "2026-11-01",
+      "basisDate": "2025-08-18",
+      "limitations": [
+        "自治州・自治県などの下位区画は対象外。",
+        "呼称の照合であり、高い実効自治を確認したものではない。"
+      ]
+    }
+  ]
+}

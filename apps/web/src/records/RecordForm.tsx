@@ -1,6 +1,6 @@
 import { type KeyboardEvent, type SubmitEvent, useId, useRef, useState } from "react";
 import { isImeConfirmingEnter, soleSelectableCandidate } from "./candidates";
-import { type CountryName, searchCountries } from "./countryNames";
+import { type CountryName, countryBadge, findCountry, searchCountries } from "./countryNames";
 import { hasRecord, MIN_YEAR, type VisitRecord } from "./visitRecords";
 
 type Props = {
@@ -8,24 +8,26 @@ type Props = {
   readonly onAdd: (record: VisitRecord) => void;
   /** PC のパネルでは横並び、スマートフォンのシートでは縦並びにする。 */
   readonly layout: "inline" | "stacked";
+  readonly initialCode?: string;
 };
 
 const currentYear = new Date().getFullYear();
 const YEARS = Array.from({ length: currentYear - MIN_YEAR + 1 }, (_, i) => currentYear - i);
 
 /**
- * 年と国を選んで訪問記録を追加する入力欄。
+ * 年と国・地域を選んで訪問記録を追加する入力欄。台帳からの移動時はinitialCodeを選択済みにする。
  * 国の候補はネイティブのボタンで並べ、国の欄で↓を押すと候補へ移り、↑↓で候補間を移動して Enter で選ぶ。
  * 選べる候補が 1 か国だけのときは、その国を強調し、選ばずに国の欄の Enter（フォームの送信）や追加ボタンで追加できる。
  * 追加後は続けて同じ年の国を登録できるよう、国の欄だけを空にして年は残す。
  */
-export function RecordForm({ records, onAdd, layout }: Props) {
+export function RecordForm({ records, onAdd, layout, initialCode }: Props) {
   const id = useId();
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
   const [year, setYear] = useState(currentYear);
-  const [query, setQuery] = useState("");
-  const [selected, setSelected] = useState<CountryName>();
+  const initialCountry = initialCode ? findCountry(initialCode) : undefined;
+  const [query, setQuery] = useState(initialCountry?.name ?? "");
+  const [selected, setSelected] = useState<CountryName | undefined>(initialCountry);
 
   const candidates = selected ? [] : searchCountries(query);
   const showList = !selected && query.trim() !== "";
@@ -88,7 +90,7 @@ export function RecordForm({ records, onAdd, layout }: Props) {
       </div>
 
       <div className="field field--country">
-        <label htmlFor={`${id}-country`}>国</label>
+        <label htmlFor={`${id}-country`}>国・地域</label>
         <div className="country-row">
           <input
             ref={inputRef}
@@ -96,7 +98,7 @@ export function RecordForm({ records, onAdd, layout }: Props) {
             className="control"
             type="text"
             autoComplete="off"
-            placeholder="国名で検索"
+            placeholder="国・地域名で検索"
             aria-describedby={showList ? `${id}-candidates-label` : undefined}
             value={query}
             onChange={(event) => {
@@ -125,7 +127,9 @@ export function RecordForm({ records, onAdd, layout }: Props) {
         {showList && (
           <div className="candidates">
             <p id={`${id}-candidates-label`} className="candidates-label">
-              {candidates.length === 0 ? "一致する国がありません" : `候補 ${candidates.length} 件`}
+              {candidates.length === 0
+                ? "一致する国・地域がありません"
+                : `候補 ${candidates.length} 件`}
             </p>
             <ul ref={listRef}>
               {candidates.map((country) => {
@@ -139,7 +143,7 @@ export function RecordForm({ records, onAdd, layout }: Props) {
                       onClick={() => choose(country)}
                       onKeyDown={(event) => moveFocus(event, event.currentTarget)}
                     >
-                      <span className="country-code">{country.code}</span>
+                      <span className="country-code">{countryBadge(country.code)}</span>
                       <Highlighted text={country.name} query={query} />
                       {added && <span className="tag">追加済み</span>}
                     </button>

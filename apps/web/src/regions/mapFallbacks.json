@@ -1,0 +1,65 @@
+[
+  {
+    "code": "BV",
+    "name": "ブーベ島",
+    "point": {
+      "longitude": 3.36,
+      "latitude": -54.42,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q23408?oldid=2558488925"
+    }
+  },
+  {
+    "code": "CC",
+    "name": "ココス（キーリング）諸島",
+    "point": {
+      "longitude": 96.895,
+      "latitude": -12.1175,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q36004?oldid=2559823399"
+    }
+  },
+  {
+    "code": "CX",
+    "name": "クリスマス島",
+    "point": {
+      "longitude": 105.6275,
+      "latitude": -10.49,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q31063?oldid=2558481451"
+    }
+  },
+  {
+    "code": "GI",
+    "name": "ジブラルタル",
+    "point": {
+      "longitude": -5.35,
+      "latitude": 36.14,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1410?oldid=2562626302"
+    }
+  },
+  {
+    "code": "TK",
+    "name": "トケラウ",
+    "point": {
+      "longitude": -171.83333333333,
+      "latitude": -9.1666666666667,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q36823?oldid=2562956306"
+    }
+  },
+  {
+    "code": "TV",
+    "name": "ツバル",
+    "point": {
+      "longitude": 178.005556,
+      "latitude": -7.475,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q672?oldid=2562959315"
+    }
+  },
+  {
+    "code": "UM",
+    "name": "合衆国領有小離島",
+    "point": {
+      "longitude": 166.633333,
+      "latitude": 19.3,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q16645?oldid=2558480257"
+    }
+  }
+]

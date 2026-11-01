@@ -1,4 +1,4 @@
-import { countryName } from "./countryNames";
+import { countryBadge, countryName } from "./countryNames";
 import { groupByYear, isRevisit, type VisitRecord } from "./visitRecords";
 
 type Props = {
@@ -30,7 +30,7 @@ export function RecordList({ records, onRemove, emptyHint }: Props) {
               const name = countryName(record.country);
               return (
                 <li key={record.country} className="record-row">
-                  <span className="country-code">{record.country}</span>
+                  <span className="country-code">{countryBadge(record.country)}</span>
                   <span className="record-name">{name}</span>
                   {isRevisit(records, record) && <span className="tag">再訪</span>}
                   <button

@@ -54,7 +54,7 @@ describe("parseStoredRecords", () => {
   });
 
   test("未知の版は読み取れない", () => {
-    expect(parseStoredRecords(stored([], 2), MAX_YEAR)).toBeUndefined();
+    expect(parseStoredRecords(stored([], 3), MAX_YEAR)).toBeUndefined();
   });
 
   test("型の合わない要素と範囲外の年を除く", () => {

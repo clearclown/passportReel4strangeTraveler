@@ -1,13 +1,17 @@
 import { getNames, registerLocale } from "i18n-iso-countries";
 import ja from "i18n-iso-countries/langs/ja.json";
+import additionalDestinations from "../regions/destinations.json";
 
 registerLocale(ja);
 
 export type CountryName = {
-  /** ISO 3166-1 alpha-2 */
+  /** 既存の国コード、または台帳の安定した地域ID。 */
   readonly code: string;
-  /** 表示に使う日本語名（i18n-iso-countries の日本語データの名称） */
+  /** 既存の日本語名、または台帳で定めた地域名。 */
   readonly name: string;
+  readonly originalName?: string;
+  readonly aliases?: readonly string[];
+  readonly kind?: string;
 };
 
 /**
@@ -23,16 +27,27 @@ export const COUNTRY_ALIASES: Readonly<Record<string, readonly string[]>> = {
   SZ: ["エスワティニ"],
 };
 
-/** 日本語名を持つすべての国。表示順は日本語名の順。 */
-export const COUNTRY_NAMES: readonly CountryName[] = Object.entries(getNames("ja"))
-  .map(([code, name]) => ({ code, name }))
-  .toSorted((a, b) => a.name.localeCompare(b.name, "ja"));
+/** 既存の国・地域と台帳で採用した追加地域。既存コードと名称は維持する。 */
+export const COUNTRY_NAMES: readonly CountryName[] = [
+  ...Object.entries(getNames("ja")).map(([code, name]) => ({ code, name })),
+  ...additionalDestinations,
+].toSorted((a, b) => a.name.localeCompare(b.name, "ja"));
 
 const nameByCode = new Map(COUNTRY_NAMES.map(({ code, name }) => [code, name]));
+const countryByCode = new Map(COUNTRY_NAMES.map((country) => [country.code, country]));
+
+export function findCountry(code: string): CountryName | undefined {
+  return countryByCode.get(code);
+}
+
+/** 内部の地域IDをバッジに出さず、コードがない訪問先には種別を示す。 */
+export function countryBadge(code: string): string {
+  return countryByCode.get(code)?.kind ?? (code.startsWith("region:") ? "地域" : code);
+}
 
 /** 国コードの日本語名。日本語名を持たないコードはコードをそのまま返す。 */
 export function countryName(code: string): string {
-  return nameByCode.get(code) ?? code;
+  return nameByCode.get(code) ?? (code.startsWith("region:") ? "未登録の地域" : code);
 }
 
 /**
@@ -48,14 +63,20 @@ export function normalizeForSearch(text: string): string {
 
 const searchIndex = COUNTRY_NAMES.map((country) => ({
   country,
-  keys: [country.name, ...(COUNTRY_ALIASES[country.code] ?? [])].map(normalizeForSearch),
+  keys: [
+    country.name,
+    country.originalName ?? "",
+    country.code,
+    ...(country.aliases ?? []),
+    ...(COUNTRY_ALIASES[country.code] ?? []),
+  ].map((text) => normalizeForSearch(text).toLowerCase()),
 }));
 
 const MAX_CANDIDATES = 8;
 
-/** 日本語名と一般的な呼び名に部分一致する国を、前方一致を先にして最大 8 件返す。 */
+/** 日本語名・原名・別名・コードに部分一致する訪問先を、前方一致を先にして最大8件返す。 */
 export function searchCountries(query: string): readonly CountryName[] {
-  const normalized = normalizeForSearch(query);
+  const normalized = normalizeForSearch(query).toLowerCase();
   if (normalized === "") {
     return [];
   }

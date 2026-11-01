@@ -37,15 +37,15 @@ describe("layoutYearTags", () => {
     );
   });
 
-  test("初めて訪れた国も収まらない分は「ほか N か国」にまとめる", () => {
+  test("初めて訪れた国も収まらない分は「ほか N か国・地域」にまとめる", () => {
     const fresh = ["AAAA", "BBBB", "CCCC", "DDDD", "EEEE", "FFFF", "GGGG"];
-    // 「ほか N か国」（7 文字 = 744）は国名と同じ行に入らないので、3 行目は「ほか 3 か国」だけになる
+    // 「ほか N か国・地域」（7 文字 = 744）は国名と同じ行に入らないので、3 行目は「ほか 3 か国・地域」だけになる
     expect(summary(layoutYearTags(fresh, ["RRRR"], measure))).toEqual([
       "0:fresh:AAAA",
       "0:fresh:BBBB",
       "1:fresh:CCCC",
       "1:fresh:DDDD",
-      "2:more:ほか 3 か国",
+      "2:more:ほか 3 か国・地域",
     ]);
   });
 

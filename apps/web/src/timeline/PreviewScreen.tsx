@@ -25,7 +25,7 @@ export function PreviewScreen({ records, wide }: Props) {
     return (
       <div className="preview-empty">
         <p>まだ記録がありません。</p>
-        <p>「記録」で訪れた国を追加すると、ここで再生できます。</p>
+        <p>「記録」で訪れた国・地域を追加すると、ここで再生できます。</p>
       </div>
     );
   }
@@ -185,7 +185,7 @@ function FrameCanvas({ reel, time }: { readonly reel: Reel; readonly time: numbe
         className="preview-canvas"
         style={{ width: cssWidth, height: (cssWidth * FRAME_HEIGHT) / FRAME_WIDTH }}
       >
-        訪問した国を年ごとに積み上げていくアニメーション
+        訪問した国・地域を年ごとに積み上げていくアニメーション
       </canvas>
     </div>
   );

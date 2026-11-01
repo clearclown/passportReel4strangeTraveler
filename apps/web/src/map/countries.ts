@@ -2,18 +2,28 @@ import type { Feature, Position } from "geojson";
 import { numericToAlpha2 } from "i18n-iso-countries";
 import { feature } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
+import additionalDestinations from "../regions/destinations.json";
+import mapFallbacks from "../regions/mapFallbacks.json";
 
 /** 地図上の1つの国（または国コードを持たない地域）の形状。 */
 export type MapCountry = {
   /**
-   * ISO 3166-1 alpha-2。
-   * Kosovo など ISO 3166-1 numeric を持たない形状では undefined になり、どの訪問国とも一致しない。
+   * 既存の国コードまたは地域ID。既存の描画APIとの互換性のためalpha2というプロパティ名を維持する。
    */
   readonly alpha2: string | undefined;
   readonly feature: Feature;
+  /** 国の上に重ねる地域。未訪問の色で親国の塗りを消さない。 */
+  readonly overlay?: boolean;
 };
 
-type CountriesTopology = Topology<{ countries: GeometryCollection }>;
+type CountriesTopology = Topology<{ countries: GeometryCollection<{ readonly name?: unknown }> }>;
+
+/** world-atlas@2.0.2で番号を持たない3形状を、固定版の名前で明示的に対応づける。 */
+const NAME_CODES: Readonly<Record<string, string>> = {
+  Kosovo: "XK",
+  "N. Cyprus": "region:northern-cyprus",
+  Somaliland: "region:somaliland",
+};
 
 /** 経緯度の範囲 [西端, 南端, 東端, 北端]。 */
 type Bounds = readonly [number, number, number, number];
@@ -86,8 +96,10 @@ function splitOverseasTerritories(alpha2: string, countryFeature: Feature): MapC
 export function toMapCountries(topology: CountriesTopology): MapCountry[] {
   return feature(topology, topology.objects.countries).features.flatMap(
     (countryFeature): MapCountry[] => {
+      const name: unknown = countryFeature.properties?.["name"];
       const alpha2 =
-        countryFeature.id === undefined ? undefined : numericToAlpha2(countryFeature.id);
+        (countryFeature.id === undefined ? undefined : numericToAlpha2(countryFeature.id)) ??
+        (typeof name === "string" ? NAME_CODES[name] : undefined);
       return alpha2 === undefined
         ? [{ alpha2, feature: countryFeature }]
         : splitOverseasTerritories(alpha2, countryFeature);
@@ -100,8 +112,36 @@ export function toMapCountries(topology: CountriesTopology): MapCountry[] {
  * 小さな国の形状まで含む 50m 解像度を使う。約 750KB あるため動的 import で初期バンドルから分離する。
  */
 export async function loadMapCountries(): Promise<MapCountry[]> {
-  const { default: topology } = await import("world-atlas/countries-50m.json");
-  return toMapCountries(topology);
+  const [{ default: topology }, { srpskaGeometry }] = await Promise.all([
+    import("world-atlas/countries-50m.json"),
+    import("./regionGeometry"),
+  ]);
+  return withAdditionalRegions(toMapCountries(topology), srpskaGeometry);
+}
+
+/** 面として存在する地域に地点を重複追加せず、それ以外の採用地域を代表地点で表示する。 */
+export function withAdditionalRegions(
+  countries: readonly MapCountry[],
+  srpskaGeometry: Feature,
+): MapCountry[] {
+  const shapes: MapCountry[] = [
+    ...countries,
+    { alpha2: "region:republika-srpska", feature: srpskaGeometry, overlay: true },
+  ];
+  const covered = new Set(shapes.map((entry) => entry.alpha2));
+  return [
+    ...shapes,
+    ...[...additionalDestinations, ...mapFallbacks]
+      .filter((entry) => !covered.has(entry.code))
+      .map((entry): MapCountry => ({
+        alpha2: entry.code,
+        feature: {
+          type: "Feature",
+          properties: { name: entry.name },
+          geometry: { type: "Point", coordinates: [entry.point.longitude, entry.point.latitude] },
+        },
+      })),
+  ];
 }
 
 /** 地図の国が訪問済みかを判定する。地図に対応しない訪問国コードは単に一致しないだけで無視される。 */

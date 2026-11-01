@@ -4,6 +4,7 @@ import type { MapLayers } from "./mapLayers";
 import type { Reel } from "./reel";
 import { buildTimeline } from "./timeline";
 import { frameAt } from "./timing";
+import { COUNTRY_NAMES } from "../records/countryNames";
 
 /** 年の数字の文字サイズ。年の数字だけを描いた文字から取り出すのに使う。 */
 const DIGIT_PX = 210;
@@ -90,11 +91,20 @@ const reel = reelOf([
 ]);
 
 describe("drawFrame（年のコマ）", () => {
+  test("315件でも国・地域の単位と初訪問数が各列に収まる", () => {
+    const all = reelOf(COUNTRY_NAMES.map((entry) => ({ year: 2024, country: entry.code })));
+    const { drawn } = draw(all, 1.9);
+    const unit = drawn.find((entry) => entry.text === "か国・地域");
+    const fresh = drawn.find((entry) => entry.text === "+315");
+    if (!unit || !fresh) throw new Error("累計または初訪問数が描かれていない");
+    expect(unit.x + unit.text.length * unit.px).toBeLessThanOrEqual(500 - 24 + 0.01);
+    expect(fresh.x + fresh.text.length * fresh.px).toBeLessThanOrEqual(FRAME_WIDTH - 80 + 0.01);
+  });
   test("年、累計、初めて訪れた国の数、国名と再訪した国を描く", () => {
     const { texts, digits } = draw(reel, 2 + 1.9);
     expect(digits).toEqual(["2", "0", "2", "4"]);
     expect(texts).toEqual(
-      expect.arrayContaining(["累計", "3", "初めて訪れた国", "+2", "イタリア", "フランス"]),
+      expect.arrayContaining(["累計", "3", "初めての国・地域", "+2", "イタリア", "フランス"]),
     );
     expect(texts).toEqual(expect.arrayContaining(["再訪", "日本"]));
   });
@@ -169,7 +179,7 @@ describe("drawFrame（まとめのコマ）", () => {
     expect(texts).toEqual(
       expect.arrayContaining(["2016", "–", "2025", "累計", "3", "イタリア", "フランス", "日本"]),
     );
-    expect(texts).not.toContain("初めて訪れた国");
+    expect(texts).not.toContain("初めての国・地域");
     expect(maps).toEqual([
       { key: "summary", y: 480, visited: ["IT", "FR", "JP"], emphasized: [], strength: 1 },
     ]);

@@ -254,12 +254,20 @@ function drawStats(
   alpha: number,
 ) {
   drawStatLabel(ctx, "累計", PADDING_X);
+  const unit = "か国・地域";
+  setText(ctx, 600, 32, COLORS.muted);
+  const unitWidth = ctx.measureText(unit).width;
   setText(ctx, 800, 120, COLORS.accent);
   const number = String(cumulative);
+  // 地域を含む長い単位と3桁以上の累計が、右の初訪問数へ重ならないようにする。
+  const maxNumberWidth = LAYOUT.statsDividerX - PADDING_X - unitWidth - 38;
+  const measuredNumberWidth = ctx.measureText(number).width;
+  if (measuredNumberWidth > maxNumberWidth)
+    setText(ctx, 800, (120 * maxNumberWidth) / measuredNumberWidth, COLORS.accent);
   ctx.fillText(number, PADDING_X, STAT_BASELINE);
   const numberWidth = ctx.measureText(number).width;
-  setText(ctx, 600, 44, COLORS.muted);
-  ctx.fillText("か国", PADDING_X + numberWidth + 14, STAT_BASELINE);
+  setText(ctx, 600, 32, COLORS.muted);
+  ctx.fillText(unit, PADDING_X + numberWidth + 14, STAT_BASELINE);
 
   if (newCount === undefined) {
     return;
@@ -267,15 +275,20 @@ function drawStats(
   ctx.globalAlpha = alpha;
   ctx.fillStyle = COLORS.line;
   ctx.fillRect(LAYOUT.statsDividerX, LAYOUT.statsY + 12, 2, 150);
-  drawStatLabel(ctx, "初めて訪れた国", LAYOUT.statsRightX);
+  drawStatLabel(ctx, "初めての国・地域", LAYOUT.statsRightX);
   setText(ctx, 800, 120, COLORS.accentStrong);
-  ctx.fillText(`+${newCount}`, LAYOUT.statsRightX, STAT_BASELINE);
+  const fresh = `+${newCount}`;
+  const freshWidth = ctx.measureText(fresh).width;
+  const available = FRAME_WIDTH - PADDING_X - LAYOUT.statsRightX;
+  if (freshWidth > available)
+    setText(ctx, 800, (120 * available) / freshWidth, COLORS.accentStrong);
+  ctx.fillText(fresh, LAYOUT.statsRightX, STAT_BASELINE);
   ctx.globalAlpha = 1;
 }
 
 const TAG_HEIGHT = NAME_TAGS.fontSize + 30;
 
-/** 国名のタグを描く。再訪と「ほか N か国」は枠線だけの控えめなタグ、「再訪」の見出しは枠なしの文字にする。 */
+/** 国名のタグを描く。再訪と「ほか N か国・地域」は枠線だけの控えめなタグ、「再訪」の見出しは枠なしの文字にする。 */
 function drawTags(ctx: FrameContext, tags: readonly Tag[]) {
   for (const tag of tags) {
     const x = PADDING_X + tag.x;

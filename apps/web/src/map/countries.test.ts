@@ -17,8 +17,8 @@ describe("toMapCountries", () => {
     expect(countries.find((c) => c.feature.id === "392")?.alpha2).toBe("JP");
   });
 
-  test("id のない形状は alpha-2 を持たない", () => {
-    expect(findByName("Kosovo").alpha2).toBeUndefined();
+  test("idのないコソボは既存のXKへ対応づける", () => {
+    expect(findByName("Kosovo").alpha2).toBe("XK");
   });
 });
 
@@ -77,6 +77,6 @@ describe("isVisited", () => {
   });
 
   test("alpha-2 を持たない形状は訪問済みと判定されない", () => {
-    expect(isVisited(findByName("Kosovo"), new Set(["XK"]))).toBe(false);
+    expect(isVisited(findByName("Siachen Glacier"), new Set(["XK"]))).toBe(false);
   });
 });

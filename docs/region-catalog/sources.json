@@ -1,0 +1,468 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-11-01",
+  "entries": [
+    {
+      "id": "iso-overview",
+      "title": "ISO 3166 の範囲とコードの扱い",
+      "url": "https://www.iso.org/iso-3166-country-codes.html",
+      "role": "standard-publisher",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "国・地域、主要な行政区画、旧コードの区別を確認。公式 OBP の全行を取得した台帳ではない。",
+      "publisher": "ISO"
+    },
+    {
+      "id": "app-country-names",
+      "title": "既存アプリの日本語候補一覧",
+      "url": "https://cdn.jsdelivr.net/npm/i18n-iso-countries@7.14.0/langs/ja.json",
+      "role": "reference-dataset",
+      "version": "7.14.0",
+      "reviewedOn": "2026-11-01",
+      "note": "既存候補250件の日本語名。XK は ISO の正式割当と区別する。",
+      "license": "MIT",
+      "sha256": "926b92040762d5d614734bce125eb1190fdbbb423b382305db9f366ed41e89d2",
+      "artifact": "langs/ja.json",
+      "publisher": "widdix GmbH / i18n-iso-countries contributors"
+    },
+    {
+      "id": "iso-reference",
+      "title": "iso-3166 の国・行政区画データ",
+      "url": "https://registry.npmjs.org/iso-3166/-/iso-3166-4.4.0.tgz",
+      "role": "reference-dataset",
+      "version": "4.4.0",
+      "reviewedOn": "2026-11-01",
+      "note": "第三者による参照実装。249件と5,070件を全件取り込んだ。現在の公式一覧・政治的地位を保証しない。PH-14 に旧 ARMM の名称がある。",
+      "license": "MIT",
+      "sha256": "7b093e56a88e337e6c4a187646aa34db7182a4d269344e6b5d9c331a199ed856",
+      "files": [
+        {
+          "path": "1.js",
+          "sha256": "03fb12d2b9c5e61f99679db75bf5a6c289512bcdf3a9f1b59ea3dcdfe2b4f294"
+        },
+        {
+          "path": "2.js",
+          "sha256": "56adf22007b3a466c4381efcfaf0310b5d9186c2423cf386b85e04baae12e5bc"
+        }
+      ],
+      "publisher": "Titus Wormer / iso-3166 contributors"
+    },
+    {
+      "id": "world-atlas",
+      "title": "既存アプリの国境形状",
+      "url": "https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-50m.json",
+      "role": "geometry-dataset",
+      "version": "2.0.2",
+      "reviewedOn": "2026-11-01",
+      "note": "Natural Earth 4.1.0 由来。形状が収録されている事実だけに使用し、現在の統治・承認状態の根拠にしない。",
+      "license": "ISC",
+      "sha256": "04342cdc1e3016bcd7db1630de95684d67b79fe3c8c460321e87aef469502394",
+      "publisher": "topojson / Natural Earth"
+    },
+    {
+      "id": "app-map-adapter",
+      "title": "既存アプリの海外領土の切り出しと照合",
+      "url": null,
+      "role": "repository-implementation",
+      "version": "9c283e295d07ff31cc6374e03b4e51b74ba95ef8",
+      "reviewedOn": "2026-11-01",
+      "note": "GF・GP・MQ・YT・RE・SJ・BQ の既存対応を確認。",
+      "path": "apps/web/src/map/countries.ts",
+      "publisher": "Passport Reel"
+    },
+    {
+      "id": "app-country-aliases",
+      "title": "既存アプリの検索用別名",
+      "url": null,
+      "role": "repository-implementation",
+      "version": "9c283e295d07ff31cc6374e03b4e51b74ba95ef8",
+      "reviewedOn": "2026-11-01",
+      "note": "韓国・中国・北朝鮮・米国・英国・エスワティニの別名を保持。",
+      "path": "apps/web/src/records/countryNames.ts",
+      "publisher": "Passport Reel"
+    },
+    {
+      "id": "natural-earth-policy",
+      "title": "Natural Earth の係争地域と地図単位",
+      "url": "https://www.naturalearthdata.com/about/disputed-boundaries-policy/",
+      "role": "discovery-reference",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "掲載ページの更新日は2022-02-27。候補の発見にのみ使用し、現存する統治体の一覧として扱わない。",
+      "lastUpdatedOn": "2022-02-27",
+      "publisher": "Natural Earth"
+    },
+    {
+      "id": "rai",
+      "title": "Regional Authority Index",
+      "url": "https://www.arjanschakel.nl/index.php/regional-authority-index",
+      "role": "discovery-reference",
+      "version": null,
+      "reviewedOn": null,
+      "note": "候補探索と自治の評価軸の参考。データ本体は未取り込み。対象国・年代に限界がある。",
+      "publisher": "Regional Authority Index research team"
+    },
+    {
+      "id": "terrgo",
+      "title": "TERRGO の分類基準",
+      "url": "https://territorialgovernancecom.wordpress.com/wp-content/uploads/2020/08/codebook_v1.pdf",
+      "role": "research-codebook",
+      "version": "v1",
+      "reviewedOn": "2026-11-01",
+      "note": "特別な地位、憲法による保障、政策・財政・議会・行政の権限を分ける。データ本体は未取り込み。",
+      "publisher": "Christoph Trinn / Felix Schulte"
+    },
+    {
+      "id": "wikidata",
+      "title": "Wikidata のデータ取得方法",
+      "url": "https://www.wikidata.org/wiki/Wikidata:Data_access",
+      "role": "discovery-reference",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "別名・現地語名・共同体・歴史的地域の探索用。今回の全件クエリは未実行。",
+      "publisher": "Wikidata contributors"
+    },
+    {
+      "id": "geoboundaries",
+      "title": "geoBoundaries の境界取得 API",
+      "url": "https://www.geoboundaries.org/api.html",
+      "role": "geometry-reference",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "国別・行政階層別の形状探索用。行政階層は自治の強さを示さない。",
+      "publisher": "William & Mary geoLab / geoBoundaries contributors"
+    },
+    {
+      "id": "srpska",
+      "title": "ボスニア・ヘルツェゴビナの構成体の地位",
+      "url": "https://www.ohr.int/entities-do-not-have-statehood/",
+      "role": "institutional-statement",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "OHR の2025-02-18の説明。構成体を独立国家として扱わない。",
+      "publishedOn": "2025-02-18",
+      "publisher": "Office of the High Representative"
+    },
+    {
+      "id": "srpska-geometry",
+      "title": "ボスニア・ヘルツェゴビナ ADM1 の形状メタデータ",
+      "url": "https://www.geoboundaries.org/api/current/gbOpen/BIH/ADM1/",
+      "role": "geometry-dataset",
+      "version": "BIH-ADM1-54001226",
+      "reviewedOn": "2026-11-01",
+      "note": "対象年2013年の境界からRepublika Srpskaだけを抽出してアプリに同梱。現在の実効支配の認定とは分ける。",
+      "boundaryYearRepresented": "2013",
+      "pinnedGeometryUrl": "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/90a1d52/releaseData/gbOpen/BIH/ADM1/geoBoundaries-BIH-ADM1_simplified.geojson",
+      "publisher": "geoBoundaries",
+      "license": "Public Domain",
+      "licenseUrl": "https://www.geoboundaries.org/api/current/gbOpen/BIH/ADM1/",
+      "sha256": "e2317c8b4560ee429bbd490a72de3077a0693fa3545c557db93c04b481e2fc43"
+    },
+    {
+      "id": "vojvodina",
+      "title": "ヴォイヴォディナ自治州規約",
+      "url": "https://www.skupstinavojvodine.gov.rs/Strana.aspx?j=EN&s=statut",
+      "role": "regional-legal-text",
+      "version": "20/2014",
+      "reviewedOn": "2026-11-01",
+      "note": "2014年規約。法的な地位を示す。実際の自治権限の全分野を評価したものではない。",
+      "publisher": "Assembly of the Autonomous Province of Vojvodina"
+    },
+    {
+      "id": "gagauzia",
+      "title": "ガガウズの特別な自治制度",
+      "url": "https://moldova.osce.org/mission-to-moldova/104969",
+      "role": "intergovernmental-explanation",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "1994年法に基づく自治領域であることを確認。現行法の改正全件と実際の権限は未照合。",
+      "publisher": "OSCE Mission to Moldova"
+    },
+    {
+      "id": "karakalpakstan",
+      "title": "ウズベキスタン憲法85〜90条",
+      "url": "https://konstitutsiya.gov.uz/en",
+      "role": "national-legal-text",
+      "version": "2023年改正憲法",
+      "reviewedOn": "2026-11-01",
+      "note": "独自憲法と住民投票に基づく離脱権の規定。実際の独立や自治の強さを意味しない。",
+      "publisher": "Republic of Uzbekistan constitutional portal"
+    },
+    {
+      "id": "istria",
+      "title": "イストリア県規約",
+      "url": "https://www.istra-istria.hr/en/region-of-istria/general-information/statute/",
+      "role": "regional-legal-text",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "地域自治とクロアチア語・イタリア語の公用使用を確認。高度自治の採用基準を満たすとは未判定。",
+      "publisher": "Istrian County"
+    },
+    {
+      "id": "aland",
+      "title": "オーランド諸島の特別な地位",
+      "url": "https://um.fi/the-special-status-of-the-aland-islands",
+      "role": "national-government-explanation",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "",
+      "publisher": "Ministry for Foreign Affairs of Finland"
+    },
+    {
+      "id": "denmark-self-government",
+      "title": "グリーンランドとフェロー諸島の自治制度",
+      "url": "https://um.dk/en/foreign-policy/the-arctic/greenland-and-the-faroe-islands/",
+      "role": "national-government-explanation",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "",
+      "publisher": "Ministry of Foreign Affairs of Denmark"
+    },
+    {
+      "id": "christiania",
+      "title": "クリスチャニアの地域と共同体",
+      "url": "https://www.sbst.dk/bolig/christiania/about-christiania",
+      "role": "national-government-explanation",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "コペンハーゲン内の地区と財団による土地取得の説明。国家としての独立を示さない。",
+      "publisher": "Danish Authority of Social Services and Housing"
+    },
+    {
+      "id": "uzupis",
+      "title": "ウジュピス地区と象徴的な独立宣言",
+      "url": "https://www.govilnius.lt/visit-vilnius/places/uzupis-district",
+      "role": "official-tourism-explanation",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "地区としての実在と1997-04-01の象徴的な独立宣言。自治政府の法的権限を示さない。",
+      "publisher": "Go Vilnius"
+    },
+    {
+      "id": "liberland-claim",
+      "title": "リベルランドの領有に関する自己説明",
+      "url": "https://liberland.org/faq",
+      "role": "claimant-statement",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "当事者の主張。領有権・国家性・実効支配を検証する根拠とは分ける。",
+      "publisher": "Liberland"
+    },
+    {
+      "id": "croatia-border",
+      "title": "クロアチア政府による国境地域の説明",
+      "url": "https://mvep.gov.hr/spravy-a-oznamy/162121?big=0",
+      "role": "national-government-statement",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "2015年のクロアチア側の立場。現在の国境確定・実効支配を確認したものではない。",
+      "publisher": "Ministry of Foreign and European Affairs of Croatia"
+    },
+    {
+      "id": "krajina",
+      "title": "クライナの成立に関する ICTY 記録",
+      "url": "https://www.icty.org/x/cases/cermak/ind/en/cer-ai051214e.htm",
+      "role": "tribunal-indictment",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "2005-12-14の起訴状の背景説明。1991-12-19の宣言を記載。判決・国境確定資料とは区別する。",
+      "publishedOn": "2005-12-14",
+      "publisher": "International Criminal Tribunal for the former Yugoslavia"
+    },
+    {
+      "id": "bangsamoro",
+      "title": "バンサモロの基本法",
+      "url": "https://mfbm.bangsamoro.gov.ph/wp-content/uploads/2024/08/R.A.-No.-11054-%E2%80%93-Organic-Law-for-the-Bangsamoro-Autonomous-Region-in-Muslim-Mindanao.pdf",
+      "role": "national-legal-text",
+      "version": "RA 11054",
+      "reviewedOn": "2026-11-01",
+      "note": "RA 11054。現在の境界・構成自治体・経過措置は別途確認が必要。",
+      "publisher": "Bangsamoro Ministry of Finance, Budget and Management"
+    },
+    {
+      "id": "bougainville",
+      "title": "ブーゲンビル政府の自治制度の説明",
+      "url": "https://abg.gov.pg/peace-agreement/autonomy",
+      "role": "territorial-government-explanation",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "独自憲法と立法等の制度の説明。将来の独立に関する交渉結果を確定する資料ではない。",
+      "publisher": "Autonomous Bougainville Government"
+    },
+    {
+      "id": "rodrigues",
+      "title": "ロドリゲス地域議会と自治法",
+      "url": "https://assembly-rra.govmu.org/Pages/Introduction.aspx",
+      "role": "territorial-government-explanation",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "2001年法に基づく議会・執行評議会・地域の法令制定権限を説明。",
+      "publisher": "Rodrigues Regional Assembly"
+    },
+    {
+      "id": "nunatsiavut",
+      "title": "ヌナツィアヴトの自治政府成立",
+      "url": "https://nunatsiavut.com/path-to-self-government/",
+      "role": "indigenous-government-explanation",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "2005-12-01の協定発効と自治政府成立を説明。ヌナブト準州とは別の地域。",
+      "publisher": "Nunatsiavut Government"
+    },
+    {
+      "id": "guna-yala",
+      "title": "グナ・ヤラの行政制度と歴史",
+      "url": "https://www.mingob.gob.pa/gobernacion-la-comarca-guna-yala/",
+      "role": "national-government-explanation",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "特別な制度を持つコマルカの説明。個々の権限と境界はさらに確認する。",
+      "publisher": "Ministry of Government of Panama"
+    },
+    {
+      "id": "kurdistan",
+      "title": "クルディスタン地域政府による憲法上の地位の説明",
+      "url": "https://gov.krd/english/news-and-announcements/posts/2022/february/krg-statement-on-tuesday-s-ruling-of-the-iraqi-federal-supreme-court/",
+      "role": "territorial-government-statement",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "2022年の地域政府の立場。今回、国会・投資委員会の憲法全文ページは403で再取得できず、追加照合が必要。",
+      "publisher": "Kurdistan Regional Government"
+    },
+    {
+      "id": "spain-territorial-list",
+      "title": "スペイン政府の自治州・自治都市一覧",
+      "url": "https://www.lamoncloa.gob.es/espana/organizacionestado/paginas/index.aspx",
+      "publisher": "Gobierno de España / La Moncloa",
+      "role": "central-government-institutional-list",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "Organización territorial の17自治州と2自治都市を照合した。各地域の権限の差、実際の運用、下位区画の全件確認は含まない。"
+    },
+    {
+      "id": "italy-constitution-116",
+      "title": "イタリア上院公開の憲法英訳・116条",
+      "url": "https://www.senato.it/documenti/repository/istituzione/costituzione_inglese.pdf",
+      "publisher": "Senato della Repubblica",
+      "role": "parliament-published-constitutional-text",
+      "version": "公開PDFの116条（版日付未確認）",
+      "reviewedOn": "2026-11-01",
+      "note": "PDF本文の116条を確認。5特別自治州とトレント・ボルツァーノの2自治県の列挙を照合した。英訳の版日付と現行伊語統合条文の全文照合は未完了。"
+    },
+    {
+      "id": "portugal-constitution-autonomy",
+      "title": "ポルトガル議会公開の憲法・自治地域の章",
+      "url": "https://www.parlamento.pt/Legislacao/Paginas/ConstituicaoRepublicaPortuguesa.aspx",
+      "publisher": "Assembleia da República",
+      "role": "parliament-published-constitutional-text",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "225条のアゾレス・マデイラの自治制度と231条の自治機関の記述を確認。両地域の自治憲章・実際の権限行使の全件確認は未完了。"
+    },
+    {
+      "id": "zanzibar-union",
+      "title": "タンザニア副大統領府の連合事項と二政府制の説明",
+      "url": "https://www.vpo.go.tz/uploads/publications/en-1593598783-ARTICLES%20OF%20UNION%20final.pdf",
+      "publisher": "Vice President’s Office, United Republic of Tanzania",
+      "role": "central-government-institutional-explanation",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "PDF本文のザンジバル政府と非連合事項の説明を確認。刊行日未確認。1964・1965年の沿革と現在の権限行使を区別する。"
+    },
+    {
+      "id": "principe-undp",
+      "title": "UNDPの事業説明におけるプリンシペ自治地域への言及",
+      "url": "https://www.undp.org/pt/sao-tome-principe/projects/apoio-ao-desenvolvimento-de-capacidades-para-modernizacao-do-sistema-de-justica-em-sao-tome-e-principe",
+      "publisher": "United Nations Development Programme",
+      "role": "international-organization-project-description",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "Região Autónoma do Príncipeという機関上の呼称を確認。自治法の全文や権限の程度を裏付ける資料としては扱わない。"
+    },
+    {
+      "id": "adjara-constitutional-law",
+      "title": "ジョージア官報のアジャリア自治共和国に関する憲法的法律",
+      "url": "https://www.matsne.gov.ge/en/document/download/3811829/0/en/pdf",
+      "publisher": "Legislative Herald of Georgia / Matsne",
+      "role": "official-legal-text",
+      "version": "document 3811829 / publication 0 / English PDF",
+      "reviewedOn": "2026-11-01",
+      "note": "英訳PDFの1～4条を確認。取得URLは固定版を指す。改正履歴と現行統合版、権限の実際の運用の確認は未完了。"
+    },
+    {
+      "id": "yogyakarta-law-list",
+      "title": "ジョグジャカルタ特別州運輸局の法令一覧",
+      "url": "https://dishub.jogjaprov.go.id/informasi/produk-hukum",
+      "publisher": "Dinas Perhubungan Daerah Istimewa Yogyakarta",
+      "role": "territorial-government-legal-list",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "検索索引内の一覧で2012年法律13号とBerlaku表記を確認。本文URLの再取得はタイムアウト。法律全文の取得と特別権限の確認を残す。"
+    },
+    {
+      "id": "bodoland-2012",
+      "title": "インド内務省のボドランドに関する2012年説明",
+      "url": "https://www.pib.gov.in/newsite/erelcontent.aspx?lang=2&reg=48&relid=84353",
+      "publisher": "Ministry of Home Affairs, India / Press Information Bureau",
+      "role": "central-government-historical-statement",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "2012年のBTC・BTADと第6附則に関する説明。2020年以後のBTRへの名称・制度・境界の継承を確認した資料ではない。",
+      "publishedOn": "2012-05-22"
+    },
+    {
+      "id": "charagua-oep-2017",
+      "title": "ボリビア選挙機関によるチャラグア自治政府成立の説明",
+      "url": "https://www.oep.org.bo/aioc/conformacion-gobiernos/gobierno-indigena-charagua-iyambae/",
+      "publisher": "Órgano Electoral Plurinacional, Bolivia",
+      "role": "electoral-authority-historical-report",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "検索索引に取得された本文で先住民自治政府と2017年の選挙手続資料への言及を確認。本文URLの再取得は502。現行の自治憲章・政府構成・境界の照合が必要。"
+    },
+    {
+      "id": "nicaragua-autonomy-2025",
+      "title": "ニカラグア国会によるカリブ海岸自治法の説明",
+      "url": "https://noticias.asamblea.gob.ni/diputados-profundizan-sobre-ley-n0-28/",
+      "publisher": "Asamblea Nacional de Nicaragua",
+      "role": "national-legislature-institutional-explanation",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "2025年の記事で法律28号によるカリブ海岸地域の自治制度への言及を確認。南北の名称は行政区画参照版と併せて探索用に対応づける。現行法全文と境界は未照合。",
+      "publishedOn": "2025-10-27"
+    },
+    {
+      "id": "china-autonomous-region-list",
+      "title": "中国国務院サイト掲載の5自治区一覧",
+      "url": "https://english.www.gov.cn/archive/statistics/202508/18/content_WS68a2c0b8c6d0868f4e8f4e98.html",
+      "publisher": "Xinhua / State Council of the People’s Republic of China",
+      "role": "government-republished-statistical-news",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "2025年記事の省級5自治区の列挙を確認。実際の自治の強さ、自治州・自治県などの下位区画を確認した資料ではない。",
+      "publishedOn": "2025-08-18"
+    },
+    {
+      "id": "corsica-special-status",
+      "title": "フランス地方公共団体ポータルによるコルシカ特別地位の沿革",
+      "url": "https://www.collectivites-locales.gouv.fr/connaitre-les-acteurs-et-les-institutions/structures-territoriales/les-collectivites-statut-particulier/statut-particulier-la-corse",
+      "publisher": "Portail des collectivités locales, France",
+      "role": "central-government-historical-explanation",
+      "version": null,
+      "reviewedOn": "2026-11-01",
+      "note": "1982・1991年の特別地位と機関の沿革を確認。2018年以後の単一公共団体制度やその後の改革の現行確認としては扱わない。"
+    },
+    {
+      "id": "wikidata-coordinates",
+      "title": "Wikidataの版を固定した代表座標",
+      "url": "https://www.wikidata.org/wiki/Wikidata:Data_access",
+      "role": "geometry-reference",
+      "publisher": "Wikidata contributors",
+      "version": "各項目のrevisionをmap-locations.jsonに記録",
+      "reviewedOn": "2026-11-01",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "note": "追加65地域と既存7地域の代表座標P625。各地点の項目ID・原名・固定版URLを保存。地域またはその集落の概略位置であり、境界や統治範囲の認定ではない。"
+    }
+  ]
+}

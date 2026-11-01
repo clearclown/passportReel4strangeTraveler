@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --host 127.0.0.1",
-    "build": "vite build",
+    "dev": "node ../../scripts/generate-destinations.mjs && vite --host 127.0.0.1",
+    "build": "node ../../scripts/generate-destinations.mjs && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "deploy": "wrangler deploy",
     "deploy:preview": "wrangler versions upload",

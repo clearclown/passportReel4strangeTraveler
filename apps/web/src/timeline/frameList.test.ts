@@ -4,7 +4,7 @@ import type { Reel } from "./reel";
 import { buildTimeline } from "./timeline";
 import { frameAt, frameJumpTimes } from "./timing";
 
-/** 2016 年に 2 か国、2019 年に 1 か国。まとめの国名は pages のとおりにページ分けされているものとする。 */
+/** 2016 年に 2 か国・地域、2019 年に 1 か国・地域。まとめの国名は pages のとおりにページ分けされているものとする。 */
 function reelOf(pages: readonly (readonly string[])[]): Reel {
   const timeline = buildTimeline([
     { year: 2016, country: "JP" },
@@ -29,15 +29,15 @@ describe("frameListItems", () => {
   test("まとめが 1 ページなら、まとめは 1 項目で累計の国数だけを示す", () => {
     const items = frameListItems(reelOf([["日本", "韓国", "フランス"]]));
     expect(items).toHaveLength(3);
-    expect(items[2]).toMatchObject({ label: "まとめ", count: "3 か国" });
+    expect(items[2]).toMatchObject({ label: "まとめ", count: "3 か国・地域" });
   });
 
   test("まとめが複数ページなら、ページごとに累計の国数とそのページの国の範囲を示す", () => {
     const items = frameListItems(reelOf([["日本", "韓国"], ["フランス"]]));
     expect(items.slice(2).map(({ label, count }) => ({ label, count }))).toEqual([
-      { label: "まとめ 1/2", count: "3 か国（1–2）" },
-      // 1 か国だけのページは範囲にせず番号だけを示す
-      { label: "まとめ 2/2", count: "3 か国（3）" },
+      { label: "まとめ 1/2", count: "3 か国・地域（1–2）" },
+      // 1 か国・地域だけのページは範囲にせず番号だけを示す
+      { label: "まとめ 2/2", count: "3 か国・地域（3）" },
     ]);
   });
 

@@ -3,9 +3,9 @@ import type { VisitRecord } from "../records/visitRecords";
 
 type YearEntry = {
   readonly year: number;
-  /** その年に初めて訪れた国（alpha-2、日本語名の順） */
+  /** その年に初めて訪れた国（既存コードまたは地域ID、日本語名の順） */
   readonly newCountries: readonly string[];
-  /** その年に再訪した国（以前の年にも記録がある国。alpha-2、日本語名の順） */
+  /** その年に再訪した国（以前の年にも記録がある国。既存コードまたは地域ID、日本語名の順） */
   readonly revisitedCountries: readonly string[];
   /** その年までの累計の訪問国 */
   readonly cumulative: ReadonlySet<string>;
@@ -16,7 +16,7 @@ export type Timeline = {
   readonly summary: {
     readonly firstYear: number;
     readonly lastYear: number;
-    /** 訪れたすべての国（alpha-2、日本語名の順） */
+    /** 訪れたすべての国（既存コードまたは地域ID、日本語名の順） */
     readonly countries: readonly string[];
   };
 };

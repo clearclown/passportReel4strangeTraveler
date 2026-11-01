@@ -117,10 +117,16 @@ export function planWorldMap(
   visited: ReadonlySet<string>,
 ): WorldMapPlan {
   const path = geoPath(createProjection(size));
-  const fills = countries.map((country) => ({
-    country,
-    color: isVisited(country, visited) ? MAP_COLORS.visited : MAP_COLORS.unvisited,
-  }));
+  const fills = countries
+    .filter(
+      (country) =>
+        country.feature.geometry.type !== "Point" &&
+        (!country.overlay || isVisited(country, visited)),
+    )
+    .map((country) => ({
+      country,
+      color: isVisited(country, visited) ? MAP_COLORS.visited : MAP_COLORS.unvisited,
+    }));
   // 国境データには同じ国の形状が別々に入っていることがある（例: AU の本土とアシュモア・カルティエ諸島）。
   // 「国として見えにくいか」で判定するため、国ごとに形状をまとめて面積を合算する。
   const visitedFeatures = new Map<string, Feature[]>();

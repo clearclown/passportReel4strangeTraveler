@@ -1,6 +1,6 @@
 /**
- * 1件の訪問記録。記録の同一性は年と国の組で決まるため ID は持たない。
- * country は ISO 3166-1 alpha-2。
+ * 1件の訪問記録。記録の同一性は年と訪問先の組で決まるため ID は持たない。
+ * countryは既存コードまたはregion:<slug>。互換性のためフィールド名を維持する。
  */
 export type VisitRecord = { readonly year: number; readonly country: string };
 
@@ -28,7 +28,7 @@ export function removeRecord(
   return records.filter((r) => r.year !== record.year || r.country !== record.country);
 }
 
-/** 記録に含まれる国の集合。同じ国の複数年の記録は1か国になる。 */
+/** 記録に含まれる訪問先の集合。同じ訪問先の複数年の記録は1件になる。 */
 export function visitedCountries(records: readonly VisitRecord[]): ReadonlySet<string> {
   return new Set(records.map((r) => r.country));
 }

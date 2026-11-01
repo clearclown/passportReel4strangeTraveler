@@ -52,7 +52,7 @@ export function WorldMapCanvas({ visited }: Props) {
 
   return (
     <canvas ref={canvasRef} className="world-map-canvas">
-      訪問した国をハイライトした世界地図
+      訪問した国・地域をハイライトした世界地図
     </canvas>
   );
 }

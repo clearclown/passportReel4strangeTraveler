@@ -3,12 +3,12 @@ import { addRecord, MIN_YEAR, type VisitRecord } from "./visitRecords";
 export const STORAGE_KEY = "passport-reel:visit-records";
 
 /** 保存形式の版。形式を変えるときは上げ、古い版の読み替えを parseStoredRecords に足す。 */
-const STORAGE_VERSION = 1;
+const STORAGE_VERSION = 2;
 
 /** 保存先として使う Storage の機能。テストではフェイクを渡す。 */
 export type RecordStorage = Pick<Storage, "getItem" | "setItem">;
 
-function isVisitRecord(value: unknown, maxYear: number): value is VisitRecord {
+function isVisitRecord(value: unknown, maxYear: number, version: number): value is VisitRecord {
   if (typeof value !== "object" || value === null || !("year" in value) || !("country" in value)) {
     return false;
   }
@@ -19,7 +19,8 @@ function isVisitRecord(value: unknown, maxYear: number): value is VisitRecord {
     year >= MIN_YEAR &&
     year <= maxYear &&
     typeof country === "string" &&
-    /^[A-Z]{2}$/.test(country)
+    (/^[A-Z]{2}$/.test(country) ||
+      (version === 2 && /^region:[a-z0-9]+(?:-[a-z0-9]+)*$/.test(country)))
   );
 }
 
@@ -44,11 +45,11 @@ export function parseStoredRecords(
     return undefined;
   }
   const { version, records } = data;
-  if (version !== STORAGE_VERSION || !Array.isArray(records)) {
+  if ((version !== 1 && version !== STORAGE_VERSION) || !Array.isArray(records)) {
     return undefined;
   }
   return records
-    .filter((value: unknown) => isVisitRecord(value, maxYear))
+    .filter((value: unknown) => isVisitRecord(value, maxYear, version))
     .reduce<readonly VisitRecord[]>(
       (acc, { year, country }) => addRecord(acc, { year, country }),
       [],

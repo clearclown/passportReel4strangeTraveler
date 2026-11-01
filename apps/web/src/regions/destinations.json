@@ -1,0 +1,788 @@
+[
+  {
+    "code": "region:northern-cyprus",
+    "name": "北キプロス",
+    "originalName": "Northern Cyprus",
+    "aliases": ["Northern Cyprus", "北キプロス・トルコ共和国"],
+    "kind": "地域",
+    "point": {
+      "longitude": 33.3634,
+      "latitude": 35.1816,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q23681?oldid=2558752655"
+    }
+  },
+  {
+    "code": "region:somaliland",
+    "name": "ソマリランド",
+    "originalName": "Somaliland",
+    "aliases": ["ソマリランド共和国"],
+    "kind": "地域",
+    "point": {
+      "longitude": 46.2,
+      "latitude": 9.8,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q34754?oldid=2558535075"
+    }
+  },
+  {
+    "code": "region:republika-srpska",
+    "name": "スルプスカ共和国",
+    "originalName": "Republika Srpska",
+    "aliases": ["Republika Srpska", "スルプスカ"],
+    "kind": "地域",
+    "point": {
+      "longitude": 17.316666666667,
+      "latitude": 44.75,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q11196?oldid=2563206084"
+    }
+  },
+  {
+    "code": "region:vojvodina",
+    "name": "ヴォイヴォディナ",
+    "originalName": "Vojvodina",
+    "aliases": ["ボイボディナ", "ヴォイヴォディナ自治州"],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 19.85000001,
+      "latitude": 45.25000001,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q44749?oldid=2561280609"
+    }
+  },
+  {
+    "code": "region:gagauzia",
+    "name": "ガガウズ",
+    "originalName": "Găgăuzia / Gagauz-Yeri",
+    "aliases": ["Gagauz-Yeri", "Gagauzia", "ガガウジア", "ガガウズ自治区", "ガガウズ自治領"],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 28.666389,
+      "latitude": 46.316389,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q164819?oldid=2548889957"
+    }
+  },
+  {
+    "code": "region:karakalpakstan",
+    "name": "カラカルパクスタン",
+    "originalName": "Qoraqalpog‘iston Respublikasi",
+    "aliases": ["Karakalpakstan", "カラカルパクスタン共和国"],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 58.86,
+      "latitude": 43.04,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q484245?oldid=2550032955"
+    }
+  },
+  {
+    "code": "region:istria",
+    "name": "イストリア県",
+    "originalName": "Istarska županija / Regione Istriana",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 13.938611111111,
+      "latitude": 45.239166666667,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q58268?oldid=2562464639"
+    }
+  },
+  {
+    "code": "region:christiania",
+    "name": "クリスチャニア自由都市",
+    "originalName": "Fristaden Christiania",
+    "aliases": ["Freetown Christiania", "クリスチャニア"],
+    "kind": "自治共同体",
+    "point": {
+      "longitude": 12.599711111111,
+      "latitude": 55.673588888889,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q202206?oldid=2551755218"
+    }
+  },
+  {
+    "code": "region:uzupis",
+    "name": "ウジュピス共和国",
+    "originalName": "Užupis",
+    "aliases": ["Republic of Uzupis", "ウジュピス", "ウズピス"],
+    "kind": "共同体",
+    "point": {
+      "longitude": 25.296944,
+      "latitude": 54.680556,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q945499?oldid=2522573132"
+    }
+  },
+  {
+    "code": "region:bougainville",
+    "name": "ブーゲンビル",
+    "originalName": "Bougainville",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 155,
+      "latitude": -6,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q18826?oldid=2545118129"
+    }
+  },
+  {
+    "code": "region:rodrigues",
+    "name": "ロドリゲス島",
+    "originalName": "Rodrigues Island",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 63.42,
+      "latitude": -19.72,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q208668?oldid=2561334137"
+    }
+  },
+  {
+    "code": "region:nunatsiavut",
+    "name": "ヌナツィアヴト",
+    "originalName": "Nunatsiavut",
+    "aliases": ["ヌナツィアブト"],
+    "kind": "先住民領域",
+    "point": {
+      "longitude": -61.5,
+      "latitude": 56.5,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q636967?oldid=2550381337"
+    }
+  },
+  {
+    "code": "region:guna-yala",
+    "name": "グナ・ヤラ",
+    "originalName": "Guna Yala",
+    "aliases": [],
+    "kind": "先住民領域",
+    "point": {
+      "longitude": -78.344166666667,
+      "latitude": 9.2961111111111,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q919017?oldid=2531738424"
+    }
+  },
+  {
+    "code": "region:bangsamoro",
+    "name": "バンサモロ",
+    "originalName": "Bangsamoro",
+    "aliases": [],
+    "kind": "地域",
+    "point": {
+      "longitude": 124.25,
+      "latitude": 7.2166666666667,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q806550?oldid=2562173215"
+    }
+  },
+  {
+    "code": "region:kurdistan-region",
+    "name": "クルディスタン地域",
+    "originalName": "Kurdistan Region",
+    "aliases": [],
+    "kind": "地域",
+    "point": {
+      "longitude": 44,
+      "latitude": 36.183333333333,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q205047?oldid=2548483862"
+    }
+  },
+  {
+    "code": "region:scotland",
+    "name": "スコットランド",
+    "originalName": "Scotland",
+    "aliases": [],
+    "kind": "地域",
+    "point": {
+      "longitude": -5,
+      "latitude": 57,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q22?oldid=2563148382"
+    }
+  },
+  {
+    "code": "region:wales",
+    "name": "ウェールズ",
+    "originalName": "Wales",
+    "aliases": [],
+    "kind": "地域",
+    "point": {
+      "longitude": -3.6333333333333,
+      "latitude": 52.35,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q25?oldid=2563148389"
+    }
+  },
+  {
+    "code": "region:northern-ireland",
+    "name": "北アイルランド",
+    "originalName": "Northern Ireland",
+    "aliases": [],
+    "kind": "地域",
+    "point": {
+      "longitude": -6.6925,
+      "latitude": 54.6075,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q26?oldid=2563148472"
+    }
+  },
+  {
+    "code": "region:azores",
+    "name": "アゾレス諸島",
+    "originalName": "Região Autónoma dos Açores",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -28.031,
+      "latitude": 38.624,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q25263?oldid=2556385939"
+    }
+  },
+  {
+    "code": "region:madeira",
+    "name": "マデイラ諸島",
+    "originalName": "Região Autónoma da Madeira",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -17,
+      "latitude": 32.75,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q26253?oldid=2556190342"
+    }
+  },
+  {
+    "code": "region:south-tyrol",
+    "name": "南チロル",
+    "originalName": "Bolzano / Bozen",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 11.33333334,
+      "latitude": 46.50000001,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q15124?oldid=2562030225"
+    }
+  },
+  {
+    "code": "region:catalonia",
+    "name": "カタルーニャ",
+    "originalName": "Catalunya",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 1.5666666666666667,
+      "latitude": 41.85,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5705?oldid=2562874643"
+    }
+  },
+  {
+    "code": "region:basque-country",
+    "name": "バスク自治州",
+    "originalName": "País Vasco",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -2.75,
+      "latitude": 43,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q3995?oldid=2562614281"
+    }
+  },
+  {
+    "code": "region:aceh",
+    "name": "アチェ",
+    "originalName": "Aceh",
+    "aliases": [],
+    "kind": "地域",
+    "point": {
+      "longitude": 95.34077777777777,
+      "latitude": 5.570277777777778,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1823?oldid=2560661188"
+    }
+  },
+  {
+    "code": "region:abkhazia",
+    "name": "アブハジア",
+    "originalName": "Abkhazia",
+    "aliases": [],
+    "kind": "地域",
+    "point": {
+      "longitude": 41,
+      "latitude": 43.15,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q31354462?oldid=2562829472"
+    }
+  },
+  {
+    "code": "region:south-ossetia",
+    "name": "南オセチア",
+    "originalName": "South Ossetia",
+    "aliases": [],
+    "kind": "地域",
+    "point": {
+      "longitude": 43.97,
+      "latitude": 42.225,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q23427?oldid=2557396674"
+    }
+  },
+  {
+    "code": "region:transnistria",
+    "name": "沿ドニエストル",
+    "originalName": "Transnistria",
+    "aliases": [
+      "沿ドニエストル共和国",
+      "沿ドニエストル・モルドバ共和国",
+      "トランスニストリア",
+      "Transdniestria",
+      "Pridnestrovie"
+    ],
+    "kind": "地域",
+    "point": {
+      "longitude": 29.25,
+      "latitude": 47.3,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q907112?oldid=2558366351"
+    }
+  },
+  {
+    "code": "region:liberland",
+    "name": "リベルランド",
+    "originalName": "Liberland",
+    "aliases": ["リベルランド自由共和国"],
+    "kind": "共同体",
+    "point": {
+      "longitude": 18.871388888888887,
+      "latitude": 45.76833333333333,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q19801186?oldid=2545422819"
+    }
+  },
+  {
+    "code": "region:andalusia",
+    "name": "アンダルシア",
+    "originalName": "Andalucía",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -5.9875,
+      "latitude": 37.405,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5783?oldid=2549183816"
+    }
+  },
+  {
+    "code": "region:aragon",
+    "name": "アラゴン",
+    "originalName": "Aragón",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -1,
+      "latitude": 41,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q4040?oldid=2561679814"
+    }
+  },
+  {
+    "code": "region:asturias",
+    "name": "アストゥリアス",
+    "originalName": "Principado de Asturias",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -5.847777777777778,
+      "latitude": 43.36138888888889,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q3934?oldid=2562596946"
+    }
+  },
+  {
+    "code": "region:cantabria",
+    "name": "カンタブリア",
+    "originalName": "Cantabria",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -4,
+      "latitude": 43.333333333333,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q3946?oldid=2562614274"
+    }
+  },
+  {
+    "code": "region:castile-and-leon",
+    "name": "カスティーリャ・イ・レオン",
+    "originalName": "Castilla y León",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -4.781944444444444,
+      "latitude": 41.754444444444445,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5739?oldid=2562615796"
+    }
+  },
+  {
+    "code": "region:castile-la-mancha",
+    "name": "カスティーリャ・ラ・マンチャ",
+    "originalName": "Castilla-La Mancha",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -3.0000333333333,
+      "latitude": 39.500011111111,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5748?oldid=2562616076"
+    }
+  },
+  {
+    "code": "region:canary-islands",
+    "name": "カナリア諸島",
+    "originalName": "Canarias",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -15.75,
+      "latitude": 28,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5813?oldid=2562615332"
+    }
+  },
+  {
+    "code": "region:extremadura",
+    "name": "エストレマドゥーラ",
+    "originalName": "Extremadura",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -6.15,
+      "latitude": 39.2,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5777?oldid=2562615775"
+    }
+  },
+  {
+    "code": "region:galicia",
+    "name": "ガリシア",
+    "originalName": "Galicia",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -7.9,
+      "latitude": 42.8,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q3908?oldid=2562613510"
+    }
+  },
+  {
+    "code": "region:balearic-islands",
+    "name": "バレアレス諸島",
+    "originalName": "Illes Balears",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 3,
+      "latitude": 39.5,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5765?oldid=2562615600"
+    }
+  },
+  {
+    "code": "region:murcia",
+    "name": "ムルシア",
+    "originalName": "Región de Murcia",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -1.8333333333333,
+      "latitude": 38,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5772?oldid=2555916703"
+    }
+  },
+  {
+    "code": "region:madrid",
+    "name": "マドリード自治州",
+    "originalName": "Comunidad de Madrid",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -3.69063,
+      "latitude": 40.42526,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5756?oldid=2520122206"
+    }
+  },
+  {
+    "code": "region:navarre",
+    "name": "ナバラ",
+    "originalName": "Comunidad Foral de Navarra",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -1.65,
+      "latitude": 42.816666666667,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q4018?oldid=2561329227"
+    }
+  },
+  {
+    "code": "region:la-rioja",
+    "name": "ラ・リオハ",
+    "originalName": "La Rioja",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -2.5,
+      "latitude": 42.25,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5727?oldid=2555830716"
+    }
+  },
+  {
+    "code": "region:valencian-community",
+    "name": "バレンシア",
+    "originalName": "Comunitat Valenciana",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -0.75,
+      "latitude": 39.5,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5720?oldid=2562614477"
+    }
+  },
+  {
+    "code": "region:ceuta",
+    "name": "セウタ",
+    "originalName": "Ciudad autónoma de Ceuta",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -5.3,
+      "latitude": 35.886667,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5823?oldid=2561371726"
+    }
+  },
+  {
+    "code": "region:melilla",
+    "name": "メリリャ",
+    "originalName": "Ciudad autónoma de Melilla",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -2.9475,
+      "latitude": 35.2825,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5831?oldid=2559596836"
+    }
+  },
+  {
+    "code": "region:aosta-valley",
+    "name": "ヴァッレ・ダオスタ",
+    "originalName": "Valle d’Aosta / Vallée d’Aoste",
+    "aliases": ["アオスタ谷"],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 7.3666666666667,
+      "latitude": 45.716666666667,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1222?oldid=2562603612"
+    }
+  },
+  {
+    "code": "region:trentino-alto-adige",
+    "name": "トレンティーノ＝アルト・アディジェ",
+    "originalName": "Trentino-Alto Adige / Südtirol",
+    "aliases": ["トレンティーノ＝南チロル"],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 11.416666666667,
+      "latitude": 46.383333333333,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1237?oldid=2562603807"
+    }
+  },
+  {
+    "code": "region:friuli-venezia-giulia",
+    "name": "フリウリ＝ヴェネツィア・ジュリア",
+    "originalName": "Friuli-Venezia Giulia",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 13.116666666667,
+      "latitude": 46.1,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1250?oldid=2562603983"
+    }
+  },
+  {
+    "code": "region:sicily",
+    "name": "シチリア",
+    "originalName": "Sicilia",
+    "aliases": ["シチリア島"],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 14.016666666666667,
+      "latitude": 37.6,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1460?oldid=2561310496"
+    }
+  },
+  {
+    "code": "region:sardinia",
+    "name": "サルデーニャ",
+    "originalName": "Sardegna",
+    "aliases": ["サルディニア"],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 9,
+      "latitude": 40,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1462?oldid=2562626576"
+    }
+  },
+  {
+    "code": "region:trentino",
+    "name": "トレント自治県",
+    "originalName": "Provincia autonoma di Trento",
+    "aliases": ["トレンティーノ", "Trentino"],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 11.1257601,
+      "latitude": 46.0664228,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q16289?oldid=2541294286"
+    }
+  },
+  {
+    "code": "region:zanzibar",
+    "name": "ザンジバル",
+    "originalName": "Zanzibar",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 39.3,
+      "latitude": -5.9,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1774?oldid=2555110753"
+    }
+  },
+  {
+    "code": "region:principe",
+    "name": "プリンシペ島",
+    "originalName": "Região Autónoma do Príncipe",
+    "aliases": ["プリンシペ自治地域", "Príncipe"],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 7.4,
+      "latitude": 1.61667,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q2366966?oldid=2477752885"
+    }
+  },
+  {
+    "code": "region:adjara",
+    "name": "アジャリア",
+    "originalName": "Autonomous Republic of Ajara",
+    "aliases": ["アジャラ", "アジャリア自治共和国", "Adjara", "Ajara"],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 42,
+      "latitude": 41.65,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q45693?oldid=2550001561"
+    }
+  },
+  {
+    "code": "region:yogyakarta",
+    "name": "ジョグジャカルタ特別州",
+    "originalName": "Daerah Istimewa Yogyakarta",
+    "aliases": ["ヨグヤカルタ", "DIY"],
+    "kind": "地域",
+    "point": {
+      "longitude": 110.36444444444444,
+      "latitude": -7.801388888888889,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q3741?oldid=2531335897"
+    }
+  },
+  {
+    "code": "region:bodoland",
+    "name": "ボドランド自治地域",
+    "originalName": "Bodoland Territorial Council area",
+    "aliases": ["ボドランド", "Bodoland", "BTC", "BTAD", "BTR"],
+    "kind": "先住民領域",
+    "point": {
+      "longitude": 90.27,
+      "latitude": 26.4,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q2577663?oldid=2496361612"
+    }
+  },
+  {
+    "code": "region:charagua-iyambae",
+    "name": "チャラグア・イヤンバエ",
+    "originalName": "Autonomía Guaraní Charagua Iyambae",
+    "aliases": ["チャラグア", "Charagua", "Charagua Iyambae"],
+    "kind": "先住民領域",
+    "point": {
+      "longitude": -63.20055556,
+      "latitude": -19.79194444,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1712242?oldid=2563327914"
+    }
+  },
+  {
+    "code": "region:caribbean-coast-north",
+    "name": "コスタ・カリベ北部",
+    "originalName": "Costa Caribe Norte",
+    "aliases": ["カリブ海岸北部"],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -83.38225833333334,
+      "latitude": 14.028369444444444,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q498452?oldid=2553206049"
+    }
+  },
+  {
+    "code": "region:caribbean-coast-south",
+    "name": "コスタ・カリベ南部",
+    "originalName": "Costa Caribe Sur",
+    "aliases": ["カリブ海岸南部"],
+    "kind": "自治地域",
+    "point": {
+      "longitude": -83.7649111111111,
+      "latitude": 12.013125,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q291279?oldid=2553206067"
+    }
+  },
+  {
+    "code": "region:inner-mongolia",
+    "name": "内モンゴル自治区",
+    "originalName": "Inner Mongolia Autonomous Region",
+    "aliases": ["内蒙古自治区"],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 113,
+      "latitude": 44,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q41079?oldid=2555188207"
+    }
+  },
+  {
+    "code": "region:guangxi",
+    "name": "広西チワン族自治区",
+    "originalName": "Guangxi Zhuang Autonomous Region",
+    "aliases": ["広西壮族自治区"],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 108.3,
+      "latitude": 23.6,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q15176?oldid=2526608040"
+    }
+  },
+  {
+    "code": "region:tibet-autonomous-region",
+    "name": "チベット自治区",
+    "originalName": "Xizang Autonomous Region",
+    "aliases": ["西蔵自治区", "Tibet Autonomous Region"],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 86.940278,
+      "latitude": 31.705556,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q17269?oldid=2559844855"
+    }
+  },
+  {
+    "code": "region:ningxia",
+    "name": "寧夏回族自治区",
+    "originalName": "Ningxia Hui Autonomous Region",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 106.27056,
+      "latitude": 38.46654,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q57448?oldid=2559844550"
+    }
+  },
+  {
+    "code": "region:xinjiang",
+    "name": "新疆ウイグル自治区",
+    "originalName": "Xinjiang Uygur Autonomous Region",
+    "aliases": [],
+    "kind": "自治地域",
+    "point": {
+      "longitude": 87.61379,
+      "latitude": 43.8253,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q34800?oldid=2560605423"
+    }
+  },
+  {
+    "code": "region:corsica",
+    "name": "コルシカ",
+    "originalName": "Corse",
+    "aliases": ["コルシカ島", "Corsica"],
+    "kind": "地域",
+    "point": {
+      "longitude": 9.0833333333333,
+      "latitude": 42.15,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q14112?oldid=2559738021"
+    }
+  }
+]

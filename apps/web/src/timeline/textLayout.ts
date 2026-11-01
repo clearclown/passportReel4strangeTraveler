@@ -16,7 +16,7 @@ export const NAME_TAGS = {
 export type Measure = (text: string) => number;
 
 /**
- * fresh：その年に初めて訪れた国、revisit：再訪した国、more：「ほか N か国」、label：「再訪」の見出し（枠なし）。
+ * fresh：その年に初めて訪れた国、revisit：再訪した国、more：「ほか N か国・地域」、label：「再訪」の見出し（枠なし）。
  */
 type TagKind = "fresh" | "revisit" | "more" | "label";
 
@@ -52,7 +52,7 @@ function layoutTags(tokens: readonly TagToken[], measure: Measure): Tag[] | unde
   return row < NAME_TAGS.maxRows ? tags : undefined;
 }
 
-/** 収まるところまで国名を減らし、残りを「ほか N か国」のタグにまとめる。 */
+/** 収まるところまで国名を減らし、残りを「ほか N か国・地域」のタグにまとめる。 */
 function layoutWithRest(
   names: readonly string[],
   kind: "fresh" | "revisit",
@@ -65,7 +65,7 @@ function layoutWithRest(
       [
         ...head,
         ...names.slice(0, shown).map((text) => ({ text, kind })),
-        ...(rest > 0 ? [{ text: `ほか ${rest} か国`, kind: "more" as const }] : []),
+        ...(rest > 0 ? [{ text: `ほか ${rest} か国・地域`, kind: "more" as const }] : []),
       ],
       measure,
     );
@@ -73,12 +73,14 @@ function layoutWithRest(
       return tags;
     }
   }
-  return layoutTags([...head, { text: `ほか ${names.length} か国`, kind: "more" }], measure) ?? [];
+  return (
+    layoutTags([...head, { text: `ほか ${names.length} か国・地域`, kind: "more" }], measure) ?? []
+  );
 }
 
 /**
  * 年のコマの国名のタグ。初めて訪れた国の後ろに「再訪」の見出しと再訪した国を並べる。
- * すべてが表示枠に収まらなければ再訪はまるごと省き、初めて訪れた国だけを並べる（収まらない分は「ほか N か国」）。
+ * すべてが表示枠に収まらなければ再訪はまるごと省き、初めて訪れた国だけを並べる（収まらない分は「ほか N か国・地域」）。
  * 初めて訪れた国がない年は、再訪した国を同じように並べる。
  */
 export function layoutYearTags(

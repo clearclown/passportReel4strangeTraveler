@@ -1,0 +1,657 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-11-01",
+  "license": "CC0-1.0",
+  "purpose": "代表地点は地域の概略位置または地域内の集落。境界・実効支配・法的地位を示さない。",
+  "sourceRefs": ["wikidata-coordinates"],
+  "entries": [
+    {
+      "id": "region:northern-cyprus",
+      "label": "Northern Cyprus",
+      "qid": "Q23681",
+      "longitude": 33.3634,
+      "latitude": 35.1816,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q23681?oldid=2558752655",
+      "revision": 2558752655
+    },
+    {
+      "id": "region:somaliland",
+      "label": "Somaliland",
+      "qid": "Q34754",
+      "longitude": 46.2,
+      "latitude": 9.8,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q34754?oldid=2558535075",
+      "revision": 2558535075
+    },
+    {
+      "id": "region:republika-srpska",
+      "label": "Republika Srpska",
+      "qid": "Q11196",
+      "longitude": 17.316666666667,
+      "latitude": 44.75,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q11196?oldid=2563206084",
+      "revision": 2563206084
+    },
+    {
+      "id": "region:vojvodina",
+      "label": "Vojvodina",
+      "qid": "Q44749",
+      "longitude": 19.85000001,
+      "latitude": 45.25000001,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q44749?oldid=2561280609",
+      "revision": 2561280609
+    },
+    {
+      "id": "region:gagauzia",
+      "label": "Gagauzia",
+      "qid": "Q164819",
+      "longitude": 28.666389,
+      "latitude": 46.316389,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q164819?oldid=2548889957",
+      "revision": 2548889957
+    },
+    {
+      "id": "region:karakalpakstan",
+      "label": "Karakalpakstan",
+      "qid": "Q484245",
+      "longitude": 58.86,
+      "latitude": 43.04,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q484245?oldid=2550032955",
+      "revision": 2550032955
+    },
+    {
+      "id": "region:istria",
+      "label": "Istria County",
+      "qid": "Q58268",
+      "longitude": 13.938611111111,
+      "latitude": 45.239166666667,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q58268?oldid=2562464639",
+      "revision": 2562464639
+    },
+    {
+      "id": "region:christiania",
+      "label": "Freetown Christiania",
+      "qid": "Q202206",
+      "longitude": 12.599711111111,
+      "latitude": 55.673588888889,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q202206?oldid=2551755218",
+      "revision": 2551755218
+    },
+    {
+      "id": "region:uzupis",
+      "label": "Užupis",
+      "qid": "Q945499",
+      "longitude": 25.296944,
+      "latitude": 54.680556,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q945499?oldid=2522573132",
+      "revision": 2522573132
+    },
+    {
+      "id": "region:bougainville",
+      "label": "Autonomous Region of Bougainville",
+      "qid": "Q18826",
+      "longitude": 155,
+      "latitude": -6,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q18826?oldid=2545118129",
+      "revision": 2545118129
+    },
+    {
+      "id": "region:rodrigues",
+      "label": "Rodrigues",
+      "qid": "Q208668",
+      "longitude": 63.42,
+      "latitude": -19.72,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q208668?oldid=2561334137",
+      "revision": 2561334137
+    },
+    {
+      "id": "region:nunatsiavut",
+      "label": "Nunatsiavut",
+      "qid": "Q636967",
+      "longitude": -61.5,
+      "latitude": 56.5,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q636967?oldid=2550381337",
+      "revision": 2550381337
+    },
+    {
+      "id": "region:guna-yala",
+      "label": "Guna Yala",
+      "qid": "Q919017",
+      "longitude": -78.344166666667,
+      "latitude": 9.2961111111111,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q919017?oldid=2531738424",
+      "revision": 2531738424
+    },
+    {
+      "id": "region:bangsamoro",
+      "label": "Bangsamoro",
+      "qid": "Q806550",
+      "longitude": 124.25,
+      "latitude": 7.2166666666667,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q806550?oldid=2562173215",
+      "revision": 2562173215
+    },
+    {
+      "id": "region:kurdistan-region",
+      "label": "Kurdistan Region of Iraq",
+      "qid": "Q205047",
+      "longitude": 44,
+      "latitude": 36.183333333333,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q205047?oldid=2548483862",
+      "revision": 2548483862
+    },
+    {
+      "id": "region:scotland",
+      "label": "Scotland",
+      "qid": "Q22",
+      "longitude": -5,
+      "latitude": 57,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q22?oldid=2563148382",
+      "revision": 2563148382
+    },
+    {
+      "id": "region:wales",
+      "label": "Wales",
+      "qid": "Q25",
+      "longitude": -3.6333333333333,
+      "latitude": 52.35,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q25?oldid=2563148389",
+      "revision": 2563148389
+    },
+    {
+      "id": "region:northern-ireland",
+      "label": "Northern Ireland",
+      "qid": "Q26",
+      "longitude": -6.6925,
+      "latitude": 54.6075,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q26?oldid=2563148472",
+      "revision": 2563148472
+    },
+    {
+      "id": "region:azores",
+      "label": "Azores",
+      "qid": "Q25263",
+      "longitude": -28.031,
+      "latitude": 38.624,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q25263?oldid=2556385939",
+      "revision": 2556385939
+    },
+    {
+      "id": "region:madeira",
+      "label": "Madeira",
+      "qid": "Q26253",
+      "longitude": -17,
+      "latitude": 32.75,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q26253?oldid=2556190342",
+      "revision": 2556190342
+    },
+    {
+      "id": "region:south-tyrol",
+      "label": "South Tyrol",
+      "qid": "Q15124",
+      "longitude": 11.33333334,
+      "latitude": 46.50000001,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q15124?oldid=2562030225",
+      "revision": 2562030225
+    },
+    {
+      "id": "region:catalonia",
+      "label": "Catalonia",
+      "qid": "Q5705",
+      "longitude": 1.5666666666666667,
+      "latitude": 41.85,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5705?oldid=2562874643",
+      "revision": 2562874643
+    },
+    {
+      "id": "region:basque-country",
+      "label": "Basque Country",
+      "qid": "Q3995",
+      "longitude": -2.75,
+      "latitude": 43,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q3995?oldid=2562614281",
+      "revision": 2562614281
+    },
+    {
+      "id": "region:aceh",
+      "label": "Aceh",
+      "qid": "Q1823",
+      "longitude": 95.34077777777777,
+      "latitude": 5.570277777777778,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1823?oldid=2560661188",
+      "revision": 2560661188
+    },
+    {
+      "id": "region:abkhazia",
+      "label": "Republic of Abkhazia",
+      "qid": "Q31354462",
+      "longitude": 41,
+      "latitude": 43.15,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q31354462?oldid=2562829472",
+      "revision": 2562829472
+    },
+    {
+      "id": "region:south-ossetia",
+      "label": "South Ossetia",
+      "qid": "Q23427",
+      "longitude": 43.97,
+      "latitude": 42.225,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q23427?oldid=2557396674",
+      "revision": 2557396674
+    },
+    {
+      "id": "region:transnistria",
+      "label": "Transnistria",
+      "qid": "Q907112",
+      "longitude": 29.25,
+      "latitude": 47.3,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q907112?oldid=2558366351",
+      "revision": 2558366351
+    },
+    {
+      "id": "region:liberland",
+      "label": "Liberland",
+      "qid": "Q19801186",
+      "longitude": 18.871388888888887,
+      "latitude": 45.76833333333333,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q19801186?oldid=2545422819",
+      "revision": 2545422819
+    },
+    {
+      "id": "region:andalusia",
+      "label": "Andalusia",
+      "qid": "Q5783",
+      "longitude": -5.9875,
+      "latitude": 37.405,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5783?oldid=2549183816",
+      "revision": 2549183816
+    },
+    {
+      "id": "region:aragon",
+      "label": "Aragon",
+      "qid": "Q4040",
+      "longitude": -1,
+      "latitude": 41,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q4040?oldid=2561679814",
+      "revision": 2561679814
+    },
+    {
+      "id": "region:asturias",
+      "label": "Asturias",
+      "qid": "Q3934",
+      "longitude": -5.847777777777778,
+      "latitude": 43.36138888888889,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q3934?oldid=2562596946",
+      "revision": 2562596946
+    },
+    {
+      "id": "region:cantabria",
+      "label": "Cantabria",
+      "qid": "Q3946",
+      "longitude": -4,
+      "latitude": 43.333333333333,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q3946?oldid=2562614274",
+      "revision": 2562614274
+    },
+    {
+      "id": "region:castile-and-leon",
+      "label": "Castile and León",
+      "qid": "Q5739",
+      "longitude": -4.781944444444444,
+      "latitude": 41.754444444444445,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5739?oldid=2562615796",
+      "revision": 2562615796
+    },
+    {
+      "id": "region:castile-la-mancha",
+      "label": "Castilla–La Mancha",
+      "qid": "Q5748",
+      "longitude": -3.0000333333333,
+      "latitude": 39.500011111111,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5748?oldid=2562616076",
+      "revision": 2562616076
+    },
+    {
+      "id": "region:canary-islands",
+      "label": "Canary Islands",
+      "qid": "Q5813",
+      "longitude": -15.75,
+      "latitude": 28,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5813?oldid=2562615332",
+      "revision": 2562615332
+    },
+    {
+      "id": "region:extremadura",
+      "label": "Extremadura",
+      "qid": "Q5777",
+      "longitude": -6.15,
+      "latitude": 39.2,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5777?oldid=2562615775",
+      "revision": 2562615775
+    },
+    {
+      "id": "region:galicia",
+      "label": "Galicia",
+      "qid": "Q3908",
+      "longitude": -7.9,
+      "latitude": 42.8,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q3908?oldid=2562613510",
+      "revision": 2562613510
+    },
+    {
+      "id": "region:balearic-islands",
+      "label": "Balearic Islands",
+      "qid": "Q5765",
+      "longitude": 3,
+      "latitude": 39.5,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5765?oldid=2562615600",
+      "revision": 2562615600
+    },
+    {
+      "id": "region:murcia",
+      "label": "Region of Murcia",
+      "qid": "Q5772",
+      "longitude": -1.8333333333333,
+      "latitude": 38,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5772?oldid=2555916703",
+      "revision": 2555916703
+    },
+    {
+      "id": "region:madrid",
+      "label": "Community of Madrid",
+      "qid": "Q5756",
+      "longitude": -3.69063,
+      "latitude": 40.42526,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5756?oldid=2520122206",
+      "revision": 2520122206
+    },
+    {
+      "id": "region:navarre",
+      "label": "Navarre",
+      "qid": "Q4018",
+      "longitude": -1.65,
+      "latitude": 42.816666666667,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q4018?oldid=2561329227",
+      "revision": 2561329227
+    },
+    {
+      "id": "region:la-rioja",
+      "label": "La Rioja",
+      "qid": "Q5727",
+      "longitude": -2.5,
+      "latitude": 42.25,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5727?oldid=2555830716",
+      "revision": 2555830716
+    },
+    {
+      "id": "region:valencian-community",
+      "label": "Valencian Community",
+      "qid": "Q5720",
+      "longitude": -0.75,
+      "latitude": 39.5,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5720?oldid=2562614477",
+      "revision": 2562614477
+    },
+    {
+      "id": "region:ceuta",
+      "label": "Ceuta",
+      "qid": "Q5823",
+      "longitude": -5.3,
+      "latitude": 35.886667,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5823?oldid=2561371726",
+      "revision": 2561371726
+    },
+    {
+      "id": "region:melilla",
+      "label": "Melilla",
+      "qid": "Q5831",
+      "longitude": -2.9475,
+      "latitude": 35.2825,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q5831?oldid=2559596836",
+      "revision": 2559596836
+    },
+    {
+      "id": "region:aosta-valley",
+      "label": "Aosta Valley",
+      "qid": "Q1222",
+      "longitude": 7.3666666666667,
+      "latitude": 45.716666666667,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1222?oldid=2562603612",
+      "revision": 2562603612
+    },
+    {
+      "id": "region:trentino-alto-adige",
+      "label": "Trentino-South Tyrol",
+      "qid": "Q1237",
+      "longitude": 11.416666666667,
+      "latitude": 46.383333333333,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1237?oldid=2562603807",
+      "revision": 2562603807
+    },
+    {
+      "id": "region:friuli-venezia-giulia",
+      "label": "Friuli Venezia Giulia",
+      "qid": "Q1250",
+      "longitude": 13.116666666667,
+      "latitude": 46.1,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1250?oldid=2562603983",
+      "revision": 2562603983
+    },
+    {
+      "id": "region:sicily",
+      "label": "Sicily",
+      "qid": "Q1460",
+      "longitude": 14.016666666666667,
+      "latitude": 37.6,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1460?oldid=2561310496",
+      "revision": 2561310496
+    },
+    {
+      "id": "region:sardinia",
+      "label": "Sardinia",
+      "qid": "Q1462",
+      "longitude": 9,
+      "latitude": 40,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1462?oldid=2562626576",
+      "revision": 2562626576
+    },
+    {
+      "id": "region:trentino",
+      "label": "Trentino",
+      "qid": "Q16289",
+      "longitude": 11.1257601,
+      "latitude": 46.0664228,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q16289?oldid=2541294286",
+      "revision": 2541294286
+    },
+    {
+      "id": "region:zanzibar",
+      "label": "Zanzibar Islands",
+      "qid": "Q1774",
+      "longitude": 39.3,
+      "latitude": -5.9,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1774?oldid=2555110753",
+      "revision": 2555110753
+    },
+    {
+      "id": "region:principe",
+      "label": "Príncipe Autonomous Region",
+      "qid": "Q2366966",
+      "longitude": 7.4,
+      "latitude": 1.61667,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q2366966?oldid=2477752885",
+      "revision": 2477752885
+    },
+    {
+      "id": "region:adjara",
+      "label": "Adjara",
+      "qid": "Q45693",
+      "longitude": 42,
+      "latitude": 41.65,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q45693?oldid=2550001561",
+      "revision": 2550001561
+    },
+    {
+      "id": "region:yogyakarta",
+      "label": "Yogyakarta",
+      "qid": "Q3741",
+      "longitude": 110.36444444444444,
+      "latitude": -7.801388888888889,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q3741?oldid=2531335897",
+      "revision": 2531335897
+    },
+    {
+      "id": "region:bodoland",
+      "label": "Bodoland",
+      "qid": "Q2577663",
+      "longitude": 90.27,
+      "latitude": 26.4,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q2577663?oldid=2496361612",
+      "revision": 2496361612
+    },
+    {
+      "id": "region:charagua-iyambae",
+      "label": "Charagua",
+      "qid": "Q1712242",
+      "longitude": -63.20055556,
+      "latitude": -19.79194444,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1712242?oldid=2563327914",
+      "revision": 2563327914
+    },
+    {
+      "id": "region:caribbean-coast-north",
+      "label": "North Caribbean Coast Autonomous Region",
+      "qid": "Q498452",
+      "longitude": -83.38225833333334,
+      "latitude": 14.028369444444444,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q498452?oldid=2553206049",
+      "revision": 2553206049
+    },
+    {
+      "id": "region:caribbean-coast-south",
+      "label": "South Caribbean Coast Autonomous Region",
+      "qid": "Q291279",
+      "longitude": -83.7649111111111,
+      "latitude": 12.013125,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q291279?oldid=2553206067",
+      "revision": 2553206067
+    },
+    {
+      "id": "region:inner-mongolia",
+      "label": "Inner Mongolia",
+      "qid": "Q41079",
+      "longitude": 113,
+      "latitude": 44,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q41079?oldid=2555188207",
+      "revision": 2555188207
+    },
+    {
+      "id": "region:guangxi",
+      "label": "Guangxi",
+      "qid": "Q15176",
+      "longitude": 108.3,
+      "latitude": 23.6,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q15176?oldid=2526608040",
+      "revision": 2526608040
+    },
+    {
+      "id": "region:tibet-autonomous-region",
+      "label": "Tibet Autonomous Region",
+      "qid": "Q17269",
+      "longitude": 86.940278,
+      "latitude": 31.705556,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q17269?oldid=2559844855",
+      "revision": 2559844855
+    },
+    {
+      "id": "region:ningxia",
+      "label": "Ningxia",
+      "qid": "Q57448",
+      "longitude": 106.27056,
+      "latitude": 38.46654,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q57448?oldid=2559844550",
+      "revision": 2559844550
+    },
+    {
+      "id": "region:xinjiang",
+      "label": "Xinjiang",
+      "qid": "Q34800",
+      "longitude": 87.61379,
+      "latitude": 43.8253,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q34800?oldid=2560605423",
+      "revision": 2560605423
+    },
+    {
+      "id": "region:corsica",
+      "label": "Corsica",
+      "qid": "Q14112",
+      "longitude": 9.0833333333333,
+      "latitude": 42.15,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q14112?oldid=2559738021",
+      "revision": 2559738021
+    },
+    {
+      "id": "iso3166-1:BV",
+      "label": "Bouvet Island",
+      "qid": "Q23408",
+      "longitude": 3.36,
+      "latitude": -54.42,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q23408?oldid=2558488925",
+      "revision": 2558488925
+    },
+    {
+      "id": "iso3166-1:CX",
+      "label": "Christmas Island",
+      "qid": "Q31063",
+      "longitude": 105.6275,
+      "latitude": -10.49,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q31063?oldid=2558481451",
+      "revision": 2558481451
+    },
+    {
+      "id": "iso3166-1:CC",
+      "label": "Cocos (Keeling) Islands",
+      "qid": "Q36004",
+      "longitude": 96.895,
+      "latitude": -12.1175,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q36004?oldid=2559823399",
+      "revision": 2559823399
+    },
+    {
+      "id": "iso3166-1:GI",
+      "label": "Gibraltar",
+      "qid": "Q1410",
+      "longitude": -5.35,
+      "latitude": 36.14,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1410?oldid=2562626302",
+      "revision": 2562626302
+    },
+    {
+      "id": "iso3166-1:TK",
+      "label": "Tokelau",
+      "qid": "Q36823",
+      "longitude": -171.83333333333,
+      "latitude": -9.1666666666667,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q36823?oldid=2562956306",
+      "revision": 2562956306
+    },
+    {
+      "id": "iso3166-1:TV",
+      "label": "Tuvalu",
+      "qid": "Q672",
+      "longitude": 178.005556,
+      "latitude": -7.475,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q672?oldid=2562959315",
+      "revision": 2562959315
+    },
+    {
+      "id": "iso3166-1:UM",
+      "label": "United States Minor Outlying Islands",
+      "qid": "Q16645",
+      "longitude": 166.633333,
+      "latitude": 19.3,
+      "sourceUrl": "https://www.wikidata.org/wiki/Q16645?oldid=2558480257",
+      "revision": 2558480257
+    }
+  ]
+}
