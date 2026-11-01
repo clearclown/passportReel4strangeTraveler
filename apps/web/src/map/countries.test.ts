@@ -1,4 +1,7 @@
 import { describe, expect, test } from "vitest";
+import type { Feature } from "geojson";
+import { geoContains } from "d3-geo";
+import { feature } from "topojson-client";
 import topology from "world-atlas/countries-50m.json";
 import { isVisited, toMapCountries } from "./countries";
 
@@ -63,6 +66,57 @@ describe("海外領土の切り出し", () => {
     const polygons = polygonsOf(code);
     expect(polygons.length).toBeGreaterThan(0);
     expect(polygons.every((p) => within(p, bounds))).toBe(true);
+  });
+});
+
+describe("北方四島の日本向け表示", () => {
+  test.each([
+    ["択捉島", [147.6, 45.05]],
+    ["国後島", [145.95, 44.15]],
+    ["色丹島", [146.75, 43.79]],
+    ["歯舞群島・水晶島", [145.91, 43.44]],
+    ["歯舞群島・志発島", [146.06, 43.43]],
+    ["歯舞群島・多楽島", [146.31, 43.64]],
+  ] as const)("%s の陸地はJPだけに含まれる", (_, point) => {
+    const containing = countries.filter((country) => geoContains(country.feature, [...point]));
+    expect(containing.map((country) => country.alpha2)).toEqual(["JP"]);
+  });
+
+  test.each([
+    ["得撫島", [149.85, 45.9], "RU"],
+    ["サハリン", [142.74, 46.96], "RU"],
+    ["北海道", [143, 43], "JP"],
+  ] as const)("%s の描画コードを維持する", (_, point, code) => {
+    const containing = countries.filter((country) => geoContains(country.feature, [...point]));
+    expect(containing.map((country) => country.alpha2)).toEqual([code]);
+  });
+
+  test("北方四島6形状の割り当てだけを変え、全ポリゴンを重複・欠落なく維持する", () => {
+    const original = feature(topology, topology.objects.countries).features;
+    const polygons = (features: readonly Feature[]) =>
+      features.flatMap(({ geometry }) => {
+        if (geometry.type === "MultiPolygon") {
+          return geometry.coordinates;
+        }
+        return geometry.type === "Polygon" ? [geometry.coordinates] : [];
+      });
+    const originalCount = (id: string) =>
+      polygons(original.filter((entry) => entry.id === id)).length;
+    const mappedCount = (code: string) =>
+      polygons(countries.filter((entry) => entry.alpha2 === code).map((entry) => entry.feature))
+        .length;
+
+    expect(mappedCount("RU")).toBe(originalCount("643") - 6);
+    expect(mappedCount("JP")).toBe(originalCount("392") + 6);
+    expect(
+      polygons(countries.map((entry) => entry.feature))
+        .map((p) => JSON.stringify(p))
+        .toSorted(),
+    ).toEqual(
+      polygons(original)
+        .map((p) => JSON.stringify(p))
+        .toSorted(),
+    );
   });
 });
 

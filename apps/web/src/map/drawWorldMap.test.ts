@@ -1,4 +1,6 @@
 import { describe, expect, test } from "vitest";
+import { geoContains } from "d3-geo";
+import { feature } from "topojson-client";
 import topology from "world-atlas/countries-50m.json";
 import { toMapCountries } from "./countries";
 import {
@@ -14,6 +16,14 @@ import {
 
 const countries = toMapCountries(topology);
 const size = { width: 1000, height: 1000 / MAP_ASPECT_RATIO };
+const northernTerritoriesPoints: readonly [number, number][] = [
+  [147.6, 45.05],
+  [145.95, 44.15],
+  [146.75, 43.79],
+  [145.91, 43.44],
+  [146.06, 43.43],
+  [146.31, 43.64],
+];
 
 function markerOf(plan: ReturnType<typeof planWorldMap>, alpha2: string) {
   const marker = plan.markers.find((m) => m.alpha2 === alpha2);
@@ -31,15 +41,24 @@ function colorOf(plan: ReturnType<typeof planWorldMap>, alpha2: string) {
 function createRecordingContext() {
   const fills: MapContext["fillStyle"][] = [];
   const arcs: { x: number; y: number }[] = [];
+  const pathCommands: number[][] = [];
   const ctx: MapContext = {
     fillStyle: "",
     strokeStyle: "",
     lineWidth: 1,
     fillRect: () => {},
-    beginPath: () => {},
-    moveTo: () => {},
-    lineTo: () => {},
-    closePath: () => {},
+    beginPath: () => {
+      pathCommands.push([0]);
+    },
+    moveTo: (x, y) => {
+      pathCommands.push([1, x, y]);
+    },
+    lineTo: (x, y) => {
+      pathCommands.push([2, x, y]);
+    },
+    closePath: () => {
+      pathCommands.push([3]);
+    },
     stroke: () => {},
     arc: (x, y) => {
       arcs.push({ x, y });
@@ -48,10 +67,27 @@ function createRecordingContext() {
       fills.push(ctx.fillStyle);
     },
   };
-  return { ctx, fills, arcs };
+  return { ctx, fills, arcs, pathCommands };
 }
 
 describe("planWorldMap", () => {
+  test.each([
+    { label: "訪問なし", visited: [], expected: MAP_COLORS.unvisited },
+    { label: "ロシアのみ", visited: ["RU"], expected: MAP_COLORS.unvisited },
+    { label: "日本のみ", visited: ["JP"], expected: MAP_COLORS.visited },
+    { label: "日本とロシア", visited: ["JP", "RU"], expected: MAP_COLORS.visited },
+  ])("$label の場合も北方四島は日本の訪問状態で塗る", ({ visited, expected }) => {
+    const plan = planWorldMap(size, countries, new Set(visited));
+    for (const point of northernTerritoriesPoints) {
+      const covering = plan.fills.filter(({ country }) => geoContains(country.feature, point));
+      expect(covering.map(({ color }) => color)).toEqual([expected]);
+    }
+    expect(colorOf(plan, "RU")).toBe(
+      visited.includes("RU") ? MAP_COLORS.visited : MAP_COLORS.unvisited,
+    );
+    expect(plan.markers).toHaveLength(0);
+  });
+
   test("訪問国はハイライト色、それ以外は未訪問色で塗られる", () => {
     const plan = planWorldMap(size, countries, new Set(["JP", "FR"]));
     expect(colorOf(plan, "JP")).toBe(MAP_COLORS.visited);
@@ -148,7 +184,7 @@ describe("drawWorldMap", () => {
 
 /** fill の呼び出しを、その時点の塗り色と光彩の強さとともに記録するフェイクのコンテキスト。 */
 function createEmphasisRecordingContext() {
-  const { ctx: base, arcs } = createRecordingContext();
+  const { ctx: base, arcs, pathCommands } = createRecordingContext();
   const fills: { color: EmphasisContext["fillStyle"]; blur: number }[] = [];
   const ctx: EmphasisContext = {
     ...base,
@@ -160,11 +196,46 @@ function createEmphasisRecordingContext() {
       fills.push({ color: ctx.fillStyle, blur: ctx.shadowBlur });
     },
   };
-  return { ctx, fills, arcs };
+  return { ctx, fills, arcs, pathCommands };
 }
 
 describe("drawEmphasizedCountries", () => {
   const featureCount = (alpha2: string) => countries.filter((c) => c.alpha2 === alpha2).length;
+
+  test("ロシアの強調描画は北方四島6形状を除いた輪郭だけを描く", () => {
+    const originalRussia = feature(topology, topology.objects.countries).features.find(
+      (entry) => entry.id === "643",
+    );
+    if (originalRussia?.geometry.type !== "MultiPolygon") {
+      throw new Error("元データにロシアのMultiPolygonがない");
+    }
+    // 実装の矩形範囲を参照せず、各島の陸上地点を含むポリゴンを期待値から除く。
+    const coordinates = originalRussia.geometry.coordinates.filter(
+      (polygon) =>
+        !northernTerritoriesPoints.some((point) =>
+          geoContains({ type: "Polygon", coordinates: polygon }, point),
+        ),
+    );
+    const actual = createEmphasisRecordingContext();
+    const expected = createEmphasisRecordingContext();
+    drawEmphasizedCountries(actual.ctx, size, countries, new Set(["RU"]), 1);
+    drawEmphasizedCountries(
+      expected.ctx,
+      size,
+      [
+        {
+          alpha2: "RU",
+          feature: { ...originalRussia, geometry: { type: "MultiPolygon", coordinates } },
+        },
+      ],
+      new Set(["RU"]),
+      1,
+    );
+
+    expect(actual.pathCommands).toEqual(expected.pathCommands);
+    expect(actual.fills).toEqual(expected.fills);
+    expect(actual.arcs).toEqual([]);
+  });
 
   test("指定した国だけを強調色で塗り、強さに応じて光彩を付ける", () => {
     const { ctx, fills } = createEmphasisRecordingContext();

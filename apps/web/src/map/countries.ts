@@ -29,11 +29,11 @@ const NAME_CODES: Readonly<Record<string, string>> = {
 type Bounds = readonly [number, number, number, number];
 
 /**
- * 国境データで親国の形状に含まれている海外領土と、その島々がある範囲。
- * world-atlas には海外領土単独の形状がないため、範囲内の島を親国から切り出して海外領土のコードで扱う。
- * 範囲は親国の島どうしを分けられれば足りるので、おおまかに取っている。
+ * 元データのコードから別の描画コードへ割り当てる島々の範囲。
+ * 海外領土の分離と、日本向けの北方四島の表示方針をここで適用し、画面・動画の描画を統一する。
+ * 輪郭は変更せず、外周全体が範囲内に収まる島だけを移す。
  */
-const OVERSEAS_TERRITORIES: Readonly<
+const POLYGON_REASSIGNMENTS: Readonly<
   Record<string, readonly { alpha2: string; bounds: readonly Bounds[] }[]>
 > = {
   FR: [
@@ -55,6 +55,23 @@ const OVERSEAS_TERRITORIES: Readonly<
     },
   ],
   NL: [{ alpha2: "BQ", bounds: [[-69, 12, -62, 18]] }],
+  RU: [
+    {
+      // 日本向けの表示として北方四島をJPへ割り当てる。得撫島やサハリンは含めない。
+      // 方針の出典: https://www.mofa.go.jp/mofaj/area/hoppo/hoppo.html
+      alpha2: "JP",
+      bounds: [
+        // 択捉島
+        [146.8, 44.3, 149, 45.6],
+        // 国後島
+        [145.3, 43.6, 146.6, 44.6],
+        // 色丹島
+        [146.5, 43.6, 147, 44],
+        // 歯舞群島（50mデータに存在する3形状）
+        [145.8, 43.3, 146.4, 43.7],
+      ],
+    },
+  ],
 };
 
 function contains(
@@ -64,20 +81,22 @@ function contains(
   return lon >= west && lon <= east && lat >= south && lat <= north;
 }
 
-/** 親国の形状を、海外領土ごとの形状と親国に残る形状に分ける。 */
-function splitOverseasTerritories(alpha2: string, countryFeature: Feature): MapCountry[] {
-  const territories = OVERSEAS_TERRITORIES[alpha2];
+/** 島の形状を保ち、表示方針に従って描画コードごとに分ける。 */
+function splitCountryPolygons(alpha2: string, countryFeature: Feature): MapCountry[] {
+  const reassignments = POLYGON_REASSIGNMENTS[alpha2];
   const geometry = countryFeature.geometry;
-  if (territories === undefined || geometry.type !== "MultiPolygon") {
+  if (reassignments === undefined || geometry.type !== "MultiPolygon") {
     return [{ alpha2, feature: countryFeature }];
   }
   const polygonsByCode = new Map<string, Position[][][]>([[alpha2, []]]);
   for (const polygon of geometry.coordinates) {
-    // 島は範囲の境界をまたがないので、外周の最初の点だけで判定する
-    const firstPoint = polygon[0]?.[0];
+    const outerRing = polygon[0];
     const code =
-      territories.find(
-        ({ bounds }) => firstPoint !== undefined && bounds.some((b) => contains(b, firstPoint)),
+      reassignments.find(
+        ({ bounds }) =>
+          outerRing !== undefined &&
+          outerRing.length > 0 &&
+          bounds.some((b) => outerRing.every((point) => contains(b, point))),
       )?.alpha2 ?? alpha2;
     polygonsByCode.set(code, [...(polygonsByCode.get(code) ?? []), polygon]);
   }
@@ -85,7 +104,7 @@ function splitOverseasTerritories(alpha2: string, countryFeature: Feature): MapC
     alpha2: code,
     feature: {
       ...countryFeature,
-      // 親国の id や名前を海外領土に引き継がない
+      // 元の国のidや名前を、別コードへ移した島に引き継がない
       ...(code === alpha2 ? {} : { id: undefined, properties: {} }),
       geometry: { type: "MultiPolygon", coordinates },
     },
@@ -102,7 +121,7 @@ export function toMapCountries(topology: CountriesTopology): MapCountry[] {
         (typeof name === "string" ? NAME_CODES[name] : undefined);
       return alpha2 === undefined
         ? [{ alpha2, feature: countryFeature }]
-        : splitOverseasTerritories(alpha2, countryFeature);
+        : splitCountryPolygons(alpha2, countryFeature);
     },
   );
 }
